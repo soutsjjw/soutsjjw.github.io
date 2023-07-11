@@ -1,0 +1,8 @@
+.article-entry blockquote {
+    padding: 0 20px;
+    position: relative;
+    border: 1px solid #e3e3e3;
+    border-left: 5px solid #ddd;
+    margin: 1em 0;
+    text-align: left;
+}
