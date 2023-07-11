@@ -1,116 +1,167 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>如何使用 Hexo + GitHub Pages 架設個人網誌 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="前言 什麼是 Hexo？ 前置作業 安裝需求   Hexo 環境建置 Step1. 安裝 Hexo Step2. 初始化 Hexo Step3. 在資料夾安裝所需檔案 _config.yml package.json scaffolds 模板 themes 主題 source 資源 source &amp; public &amp; .deploy_git 的差別     常用指令 new 新增">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>如何使用 Hexo + GitHub Pages 架設個人網誌 | Hexo</title><meta name="author" content="Souts JJW"><meta name="copyright" content="Souts JJW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言 什麼是 Hexo？ 前置作業 安裝需求   Hexo 環境建置 Step1. 安裝 Hexo Step2. 初始化 Hexo Step3. 在資料夾安裝所需檔案 _config.yml package.json scaffolds 模板 themes 主題 source 資源 source &amp; public &amp; .deploy_git 的差別     常用指令 new 新增">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何使用 Hexo + GitHub Pages 架設個人網誌">
 <meta property="og:url" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言 什麼是 Hexo？ 前置作業 安裝需求   Hexo 環境建置 Step1. 安裝 Hexo Step2. 初始化 Hexo Step3. 在資料夾安裝所需檔案 _config.yml package.json scaffolds 模板 themes 主題 source 資源 source &amp; public &amp; .deploy_git 的差別     常用指令 new 新增">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/JEdBf4y.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/drhF9RQ.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/3162t1b.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/20qI9yU.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/PRFQNVz.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/tPOIIKP.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/t1vVcEC.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/JUHZ8Lw.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/nDvzP4k.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/0i5Fg2R.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/bVw4OIH.png">
-<meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/X0cAUy6.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:published_time" content="2023-07-11T09:57:25.000Z">
-<meta property="article:modified_time" content="2023-07-11T10:53:35.760Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2023-07-11T16:14:30.000Z">
+<meta property="article:author" content="Souts JJW">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/JEdBf4y.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '如何使用 Hexo + GitHub Pages 架設個人網誌',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-12 00:14:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-  
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-20230711-how-to-use-hexo-and-pull-github" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/" class="article-date">
-  <time class="dt-published" datetime="2023-07-11T09:57:25.000Z" itemprop="datePublished">2023-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <h1 class="p-name article-title" itemprop="headline name">
-      如何使用 Hexo + GitHub Pages 架設個人網誌
-    </h1>
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-
-      </header>
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ul>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">如何使用 Hexo + GitHub Pages 架設個人網誌</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-07-11T09:57:25.000Z" title="Created 2023-07-11 17:57:25">2023-07-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-07-11T16:14:30.000Z" title="Updated 2023-07-12 00:14:30">2023-07-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="如何使用 Hexo + GitHub Pages 架設個人網誌"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ul>
 <li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
 <li><a href="#%E4%BB%80%E9%BA%BC%E6%98%AF-hexo">什麼是 Hexo？</a></li>
 <li><a href="#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD">前置作業</a><ul>
@@ -148,12 +199,13 @@
 <li><a href="#%E5%B0%87%E6%AA%94%E6%A1%88%E7%99%BC%E5%B8%83%E5%88%B0-github">將檔案發布到 GitHub</a><ul>
 <li><a href="#step1-%E5%AE%89%E8%A3%9D-git-%E7%9B%B8%E9%97%9C%E5%A5%97%E4%BB%B6">Step1. 安裝 Git 相關套件</a></li>
 <li><a href="#step2-%E4%BF%AE%E6%94%B9-_configyml-%E6%AA%94%E6%A1%88%E7%9A%84-deployment-%E8%A8%AD%E5%AE%9A">Step2. 修改 _config.yml 檔案的 Deployment 設定</a></li>
-<li><a href="#step3-%E8%BC%B8%E5%85%A5%E9%83%A8%E7%BD%B2%E6%8C%87%E4%BB%A4">Step3. 輸入部署指令</a></li>
+<li><a href="#step3-%E7%A2%BA%E8%AA%8D%E9%A0%81%E9%9D%A2">Step3. 確認頁面</a></li>
+<li><a href="#step4-%E8%BC%B8%E5%85%A5%E9%83%A8%E7%BD%B2%E6%8C%87%E4%BB%A4">Step4. 輸入部署指令</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#%E7%B5%90%E8%AA%9E">結語</a></li>
+<li><a href="#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A1%8C">更改主題</a><br>- <a href="#step1-%E5%8F%96%E5%BE%97%E6%AA%94%E6%A1%88">Step1. 取得檔案</a><br>- <a href="#step2-%E4%BF%AE%E6%94%B9%E9%A0%90%E8%A8%AD%E7%9A%84%E4%B8%BB%E9%A1%8C">Step2. 修改預設的主題</a><br>- <a href="#step3-%E8%AA%BF%E6%95%B4%E4%B8%BB%E9%A1%8C%E5%85%A7%E5%AE%B9">Step3. 調整主題內容</a><br>- <a href="#step4-%E7%A2%BA%E8%AA%8D%E6%96%B0%E4%B8%BB%E9%A1%8C">Step4. 確認新主題</a></li>
 </ul>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
 <p>本篇主要介紹如何使用 Hexo 並搭配 GitHub 來快速架設網誌。從介紹什麼是 Hexo 框架，該如何安裝、建立環境，接著介紹一些常用指令，以及如何部署到 GitHub 上。</p>
@@ -171,6 +223,7 @@
 <li>將檔案發布到 GitHub</li>
 </ul>
 </li>
+<li>更換主題</li>
 </ul>
 <h2 id="什麼是-Hexo？"><a href="#什麼是-Hexo？" class="headerlink" title="什麼是 Hexo？"></a>什麼是 Hexo？</h2><hr>
 <blockquote>
@@ -229,7 +282,7 @@
 
 <img src="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/tPOIIKP.png" class="" title="label">
 
-<ol start="2">
+<ol>
 <li>也可以先建立好資料夾，並在該資料夾輸入上述指令，同樣能進行初始化。可使用 cd 指令來切換路徑：</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd &lt;資料夾名稱 or 資料夾路徑&gt;</span><br></pre></td></tr></table></figure>
@@ -320,16 +373,19 @@
 <blockquote>
 <p>需注意這裡指的 _config.yml 檔案是根目錄的，而不是 themes 主題中的。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/username/username.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>type：選擇部屬模式，這裡填 git</li>
 <li>repo：GitHub repository 的連結，記得將 username 修改成自己的帳號名稱</li>
-<li>branch：選擇分支，預設為 master</li>
+<li>branch：選擇分支，預設為 main</li>
 </ul>
 <img src="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/bVw4OIH.png" class="" title="label">
 
-<h5 id="Step3-輸入部署指令"><a href="#Step3-輸入部署指令" class="headerlink" title="Step3. 輸入部署指令"></a>Step3. 輸入部署指令</h5><p>使用下列指令即可部署檔案到網站上，第一次輸入可能會要求登入 GitHub 帳號：</p>
+<h5 id="Step3-確認頁面"><a href="#Step3-確認頁面" class="headerlink" title="Step3. 確認頁面"></a>Step3. 確認頁面</h5><p>使用下列指令確認頁面是否符合預期</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s --debug</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step4-輸入部署指令"><a href="#Step4-輸入部署指令" class="headerlink" title="Step4. 輸入部署指令"></a>Step4. 輸入部署指令</h5><p>使用下列指令即可部署檔案到網站上，第一次輸入可能會要求登入 GitHub 帳號：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>通常在完成每次修改後，會依序輸入 clean -&gt; generate -&gt; deploy 三行指令，避免更新不完全：</p>
@@ -339,109 +395,26 @@
 <p>這樣就完成部署網誌到 GitHub 了！可在個人頁面 <code>https://username.github.io</code> 確認是否有發布成功，預設畫面如下：</p>
 <img src="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/X0cAUy6.png" class="" title="label">
 
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><hr>
-<p>當初之所以會對 Hexo 產生興趣，是因為在課程第十四週時，學到該如何購買個人主機和網域來部署，主要是部署動態網頁為主，例如 todolist 和 board。</p>
-<p>本來也想要嘗試放看看 Markdown 檔案，卻沒想到瀏覽器並不支援，會導致部分內容變成亂碼等等。上網查該如何解決，就找到許多和 Hexo + GitHub 架設網誌有關的文章，能夠快速架設並且支援解析 Markdown 檔案，想著之後一定也要來挑戰看看！</p>
-<p>實際在使用 Hexo 框架時，真的比想像中還要方便許多！除了能夠快速套用主題或外掛，也能自訂修改想要的樣式，能夠玩出許多變化。目前網站 Demo 還很陽春，之後會繼續摸索有哪些功能，預計下一篇會整裡有關更換主題等設定，同時也慢慢豐富自己的網誌。</p>
+<h2 id="更改主題"><a href="#更改主題" class="headerlink" title="更改主題"></a>更改主題</h2><p><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">hexo-theme-butterfly</a></p>
+<h5 id="Step1-取得檔案"><a href="#Step1-取得檔案" class="headerlink" title="Step1. 取得檔案"></a>Step1. 取得檔案</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<p>如果出現下面訊息</p>
+<blockquote>
+<p>extends includes&#x2F;layout.pug block content include .&#x2F;includes&#x2F;mixins&#x2F;post-ui.pug #recent-posts.recent-posts +postUI include includes&#x2F;pagination.pug</p>
+</blockquote>
+<p>這是因為沒有安裝<code>pug</code>和<code>stylus renderer</code>，執行下列指令進行安裝</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step2-修改預設的主題"><a href="#Step2-修改預設的主題" class="headerlink" title="Step2. 修改預設的主題"></a>Step2. 修改預設的主題</h5><p>修改根目錄的<code>_config.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: butterfly</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step3-調整主題內容"><a href="#Step3-調整主題內容" class="headerlink" title="Step3. 調整主題內容"></a>Step3. 調整主題內容</h5><p>修改theme\butterfly目錄的<code>_config.yml</code></p>
+<h5 id="Step4-確認新主題"><a href="#Step4-確認新主題" class="headerlink" title="Step4. 確認新主題"></a>Step4. 確認新主題</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s --debug</span><br></pre></td></tr></table></figure>
+
 <p>參考資料：</p>
 <ul>
+<li><a target="_blank" rel="noopener" href="https://hackmd.io/@Heidi-Liu/note-hexo-github">【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌</a></li>
 <li><a target="_blank" rel="noopener" href="https://hsiangfeng.github.io/hexo/20190411/932826160/">架設 Hexo+GitHub</a></li>
 <li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000021923137">基於Hexo的matery主題搭建博客並深度優化</a></li>
 </ul>
-<link rel="stylesheet" href="css/custom.css">
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/" data-id="cljy6d98o00019kh301nid7h5" data-title="如何使用 Hexo + GitHub Pages 架設個人網誌" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/">如何使用 Hexo + GitHub Pages 架設個人網誌</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Souts JJW</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-Hexo%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">什麼是 Hexo？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD"><span class="toc-number">3.</span> <span class="toc-text">前置作業</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D%E9%9C%80%E6%B1%82"><span class="toc-number">3.1.</span> <span class="toc-text">安裝需求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">Hexo 環境建置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Step1-%E5%AE%89%E8%A3%9D-Hexo"><span class="toc-number">4.0.1.</span> <span class="toc-text">Step1. 安裝 Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Step2-%E5%88%9D%E5%A7%8B%E5%8C%96-Hexo"><span class="toc-number">4.0.2.</span> <span class="toc-text">Step2. 初始化 Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Step3-%E5%9C%A8%E8%B3%87%E6%96%99%E5%A4%BE%E5%AE%89%E8%A3%9D%E6%89%80%E9%9C%80%E6%AA%94%E6%A1%88"><span class="toc-number">4.0.3.</span> <span class="toc-text">Step3. 在資料夾安裝所需檔案</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#config-yml"><span class="toc-number">4.0.3.1.</span> <span class="toc-text">_config.yml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#package-json"><span class="toc-number">4.0.3.2.</span> <span class="toc-text">package.json</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#scaffolds-%E6%A8%A1%E6%9D%BF"><span class="toc-number">4.0.3.3.</span> <span class="toc-text">scaffolds 模板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#themes-%E4%B8%BB%E9%A1%8C"><span class="toc-number">4.0.3.4.</span> <span class="toc-text">themes 主題</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#source-%E8%B3%87%E6%BA%90"><span class="toc-number">4.0.3.5.</span> <span class="toc-text">source 資源</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#source-amp-public-amp-deploy-git-%E7%9A%84%E5%B7%AE%E5%88%A5"><span class="toc-number">4.0.3.6.</span> <span class="toc-text">source &amp; public &amp; .deploy_git 的差別</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text">常用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#new-%E6%96%B0%E5%A2%9E%E6%96%87%E7%AB%A0"><span class="toc-number">5.0.1.</span> <span class="toc-text">new 新增文章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clean-%E6%B8%85%E9%99%A4%E9%9D%9C%E6%85%8B%E6%AA%94%E6%A1%88%E8%88%87%E5%BF%AB%E5%8F%96"><span class="toc-number">5.0.2.</span> <span class="toc-text">clean 清除靜態檔案與快取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#generate-%E7%94%A2%E7%94%9F%E9%9D%9C%E6%85%8B%E6%AA%94%E6%A1%88"><span class="toc-number">5.0.3.</span> <span class="toc-text">generate 產生靜態檔案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#server-%E5%95%9F%E5%8B%95%E4%BC%BA%E6%9C%8D%E5%99%A8"><span class="toc-number">5.0.4.</span> <span class="toc-text">server 啟動伺服器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub"><span class="toc-number">6.</span> <span class="toc-text">部署到 GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B-GitHub-%E5%B0%88%E6%A1%88"><span class="toc-number">6.0.1.</span> <span class="toc-text">建立 GitHub 專案</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Step1-%E8%A8%BB%E5%86%8A-GitHub-%E5%B8%B3%E8%99%9F%E4%B8%A6%E7%99%BB%E5%85%A5"><span class="toc-number">6.0.1.1.</span> <span class="toc-text">Step1. 註冊 GitHub 帳號並登入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step2-%E9%BB%9E%E9%81%B8-New-%E6%96%B0%E5%A2%9E%E4%B8%80%E5%80%8B-Repository%EF%BC%88%E5%B0%88%E6%A1%88%EF%BC%89"><span class="toc-number">6.0.1.2.</span> <span class="toc-text">Step2. 點選 New 新增一個 Repository（專案）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step3-%E5%B0%87%E5%B0%88%E6%A1%88%E5%90%8D%E7%A8%B1%E5%91%BD%E5%90%8D%E7%82%BA-username-github-io%EF%BC%8Cusername-%E8%A8%98%E5%BE%97%E6%94%B9%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B8%B3%E8%99%9F%E5%90%8D%E7%A8%B1"><span class="toc-number">6.0.1.3.</span> <span class="toc-text">Step3. 將專案名稱命名為 username.github.io，username 記得改成自己的帳號名稱</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%87%E6%AA%94%E6%A1%88%E7%99%BC%E5%B8%83%E5%88%B0-GitHub"><span class="toc-number">6.0.2.</span> <span class="toc-text">將檔案發布到 GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Step1-%E5%AE%89%E8%A3%9D-Git-%E7%9B%B8%E9%97%9C%E5%A5%97%E4%BB%B6"><span class="toc-number">6.0.2.1.</span> <span class="toc-text">Step1. 安裝 Git 相關套件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step2-%E4%BF%AE%E6%94%B9-config-yml-%E6%AA%94%E6%A1%88%E7%9A%84-Deployment-%E8%A8%AD%E5%AE%9A"><span class="toc-number">6.0.2.2.</span> <span class="toc-text">Step2. 修改 _config.yml 檔案的 Deployment 設定</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step3-%E7%A2%BA%E8%AA%8D%E9%A0%81%E9%9D%A2"><span class="toc-number">6.0.2.3.</span> <span class="toc-text">Step3. 確認頁面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step4-%E8%BC%B8%E5%85%A5%E9%83%A8%E7%BD%B2%E6%8C%87%E4%BB%A4"><span class="toc-number">6.0.2.4.</span> <span class="toc-text">Step4. 輸入部署指令</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A1%8C"><span class="toc-number">7.</span> <span class="toc-text">更改主題</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Step1-%E5%8F%96%E5%BE%97%E6%AA%94%E6%A1%88"><span class="toc-number">7.0.0.1.</span> <span class="toc-text">Step1. 取得檔案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step2-%E4%BF%AE%E6%94%B9%E9%A0%90%E8%A8%AD%E7%9A%84%E4%B8%BB%E9%A1%8C"><span class="toc-number">7.0.0.2.</span> <span class="toc-text">Step2. 修改預設的主題</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step3-%E8%AA%BF%E6%95%B4%E4%B8%BB%E9%A1%8C%E5%85%A7%E5%AE%B9"><span class="toc-number">7.0.0.3.</span> <span class="toc-text">Step3. 調整主題內容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step4-%E7%A2%BA%E8%AA%8D%E6%96%B0%E4%B8%BB%E9%A1%8C"><span class="toc-number">7.0.0.4.</span> <span class="toc-text">Step4. 確認新主題</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/" title="如何使用 Hexo + GitHub Pages 架設個人網誌">如何使用 Hexo + GitHub Pages 架設個人網誌</a><time datetime="2023-07-11T09:57:25.000Z" title="Created 2023-07-11 17:57:25">2023-07-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Souts JJW</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
