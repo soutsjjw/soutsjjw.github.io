@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   
   
-  <title>【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌 | Hexo</title>
+  <title>如何使用 Hexo + GitHub Pages 架設個人網誌 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="前言 什麼是 Hexo？ 前置作業 安裝需求   Hexo 環境建置 Step1. 安裝 Hexo Step2. 初始化 Hexo Step3. 在資料夾安裝所需檔案 _config.yml package.json scaffolds 模板 themes 主題 source 資源 source &amp; public &amp; .deploy_git 的差別     常用指令 new 新增">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌">
+<meta property="og:title" content="如何使用 Hexo + GitHub Pages 架設個人網誌">
 <meta property="og:url" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言 什麼是 Hexo？ 前置作業 安裝需求   Hexo 環境建置 Step1. 安裝 Hexo Step2. 初始化 Hexo Step3. 在資料夾安裝所需檔案 _config.yml package.json scaffolds 模板 themes 主題 source 資源 source &amp; public &amp; .deploy_git 的差別     常用指令 new 新增">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/bVw4OIH.png">
 <meta property="og:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/X0cAUy6.png">
 <meta property="article:published_time" content="2023-07-11T09:57:25.000Z">
-<meta property="article:modified_time" content="2023-07-11T10:40:35.998Z">
+<meta property="article:modified_time" content="2023-07-11T10:49:49.999Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/JEdBf4y.png">
@@ -102,7 +102,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌
+      如何使用 Hexo + GitHub Pages 架設個人網誌
     </h1>
   
 
@@ -155,7 +155,8 @@
 </li>
 <li><a href="#%E7%B5%90%E8%AA%9E">結語</a></li>
 </ul>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇主要介紹如何使用 Hexo 並搭配 GitHub 來快速架設網誌。從介紹什麼是 Hexo 框架，該如何安裝、建立環境，接著介紹一些常用指令，以及如何部署到 GitHub 上。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>本篇主要介紹如何使用 Hexo 並搭配 GitHub 來快速架設網誌。從介紹什麼是 Hexo 框架，該如何安裝、建立環境，接著介紹一些常用指令，以及如何部署到 GitHub 上。</p>
 <p>文章可分為下列幾個部分：</p>
 <ul>
 <li>什麼是 Hexo？</li>
@@ -171,7 +172,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="什麼是-Hexo？"><a href="#什麼是-Hexo？" class="headerlink" title="什麼是 Hexo？"></a>什麼是 Hexo？</h2><blockquote>
+<h2 id="什麼是-Hexo？"><a href="#什麼是-Hexo？" class="headerlink" title="什麼是 Hexo？"></a>什麼是 Hexo？</h2><hr>
+<blockquote>
 <p>引用<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo">官網介紹</a>：A fast, simple &amp; powerful blog framework, powered by Node.js.</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/">Hexo</a> 其實就是一個基於 Node.js 開發的網誌框架，具有下列幾項特點：</p>
@@ -181,7 +183,8 @@
 <li>具有豐富的外掛套件</li>
 <li>支援一鍵部署到 GitHub Pages 或 Heroku 等支援靜態網頁的空間</li>
 </ul>
-<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><h3 id="安裝需求"><a href="#安裝需求" class="headerlink" title="安裝需求"></a>安裝需求</h3><p>在開始安裝 Hexo 之前，必須先在電腦安裝下列工具：</p>
+<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><hr>
+<h3 id="安裝需求"><a href="#安裝需求" class="headerlink" title="安裝需求"></a>安裝需求</h3><p>在開始安裝 Hexo 之前，必須先在電腦安裝下列工具：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>：提供 npm 來安裝所需的套件。這裡可選擇安裝左側 14.15.0 LTS 版本<blockquote>
 <p>Hexo 官網建議使用 Node.js 10.0 及以上版本，若不確定下載哪個版本，可在終端機輸入 <code>npm versin</code> 查看版本號。</p>
@@ -199,7 +202,8 @@
 <blockquote>
 <p>[補充] <a target="_blank" rel="noopener" href="https://hackmd.io/@Heidi-Liu/note-git-and-github">Git 和 GitHub 的差別？</a> Git 是用來版本控制的程式；GitHub 則是提供存放 Git Repository 的服務，讓使用者能在視覺化界面進行管理。</p>
 </blockquote>
-<h2 id="Hexo-環境建置"><a href="#Hexo-環境建置" class="headerlink" title="Hexo 環境建置"></a>Hexo 環境建置</h2><p>完成前置作業後，接著就要來建立 Hexo 環境，步驟如下：</p>
+<h2 id="Hexo-環境建置"><a href="#Hexo-環境建置" class="headerlink" title="Hexo 環境建置"></a>Hexo 環境建置</h2><hr>
+<p>完成前置作業後，接著就要來建立 Hexo 環境，步驟如下：</p>
 <blockquote>
 <p>若對 CLI 不熟悉，可參考：<a target="_blank" rel="noopener" href="https://hackmd.io/@Heidi-Liu/note-cli">Command Line 入門 &amp; 基本指令</a></p>
 </blockquote>
@@ -263,7 +267,8 @@
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source -&gt; public -&gt; .deploy_git</span><br></pre></td></tr></table></figure>
 
-<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><p>接著介紹一些 Hexo 常會用到的相關指令語法，更多詳細指令可參考官方文件。</p>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><hr>
+<p>接著介紹一些 Hexo 常會用到的相關指令語法，更多詳細指令可參考官方文件。</p>
 <h4 id="new-新增文章"><a href="#new-新增文章" class="headerlink" title="new 新增文章"></a>new 新增文章</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -292,7 +297,8 @@
 
 <img src="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/JUHZ8Lw.png" class="" title="label">
 
-<h2 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h2><h4 id="建立-GitHub-專案"><a href="#建立-GitHub-專案" class="headerlink" title="建立 GitHub 專案"></a>建立 GitHub 專案</h4><p>在架設網誌之前，還必須準備一個存放網站的空間，例如架設主機，或是選擇現有的平台，例如 GitHub Pages 或 Heroku 等，本篇以 GitHub 作為範例。</p>
+<h2 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h2><hr>
+<h4 id="建立-GitHub-專案"><a href="#建立-GitHub-專案" class="headerlink" title="建立 GitHub 專案"></a>建立 GitHub 專案</h4><p>在架設網誌之前，還必須準備一個存放網站的空間，例如架設主機，或是選擇現有的平台，例如 GitHub Pages 或 Heroku 等，本篇以 GitHub 作為範例。</p>
 <p>接著可依照下列步驟在 GitHub 新增專案：</p>
 <h5 id="Step1-註冊-GitHub-帳號並登入"><a href="#Step1-註冊-GitHub-帳號並登入" class="headerlink" title="Step1. 註冊 GitHub 帳號並登入"></a>Step1. 註冊 GitHub 帳號並登入</h5><h5 id="Step2-點選-New-新增一個-Repository（專案）"><a href="#Step2-點選-New-新增一個-Repository（專案）" class="headerlink" title="Step2. 點選 New 新增一個 Repository（專案）"></a>Step2. 點選 New 新增一個 Repository（專案）</h5><img src="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/nDvzP4k.png" class="" title="label">
 
@@ -325,7 +331,8 @@
 <p>這樣就完成部署網誌到 GitHub 了！可在個人頁面 <code>https://username.github.io</code> 確認是否有發布成功，預設畫面如下：</p>
 <img src="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/X0cAUy6.png" class="" title="label">
 
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>當初之所以會對 Hexo 產生興趣，是因為在課程第十四週時，學到該如何購買個人主機和網域來部署，主要是部署動態網頁為主，例如 todolist 和 board。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><hr>
+<p>當初之所以會對 Hexo 產生興趣，是因為在課程第十四週時，學到該如何購買個人主機和網域來部署，主要是部署動態網頁為主，例如 todolist 和 board。</p>
 <p>本來也想要嘗試放看看 Markdown 檔案，卻沒想到瀏覽器並不支援，會導致部分內容變成亂碼等等。上網查該如何解決，就找到許多和 Hexo + GitHub 架設網誌有關的文章，能夠快速架設並且支援解析 Markdown 檔案，想著之後一定也要來挑戰看看！</p>
 <p>實際在使用 Hexo 框架時，真的比想像中還要方便許多！除了能夠快速套用主題或外掛，也能自訂修改想要的樣式，能夠玩出許多變化。目前網站 Demo 還很陽春，之後會繼續摸索有哪些功能，預計下一篇會整裡有關更換主題等設定，同時也慢慢豐富自己的網誌。</p>
 <p>參考資料：</p>
@@ -337,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/" data-id="cljy5wdav00016gh3giri6exk" data-title="【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/07/11/20230711-how-to-use-hexo-and-pull-github/" data-id="cljy67zj000010kh3edgd9ozu" data-title="如何使用 Hexo + GitHub Pages 架設個人網誌" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -378,7 +385,7 @@
       <ul>
         
           <li>
-            <a href="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/">【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌</a>
+            <a href="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/">如何使用 Hexo + GitHub Pages 架設個人網誌</a>
           </li>
         
       </ul>
