@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>編寫乾淨代碼的前 10 個技巧 | 記憶所及之處</title><meta name="author" content="Souts JJW"><meta name="copyright" content="Souts JJW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="The Top 10 Tips to Write Clean Code  介紹 Introduction 什麼是乾淨的代碼？ What is a clean code? 編寫乾淨代碼的重要性 The Importance of Writing Clean Code 解決問題變得容易：Solving problems becomes easy: 清晰的思想交流：Clear communication">
+<meta property="og:type" content="article">
+<meta property="og:title" content="編寫乾淨代碼的前 10 個技巧">
+<meta property="og:url" content="http://example.com/2023/07/14/the-top-10-tips-to-write-clean-code/index.html">
+<meta property="og:site_name" content="記憶所及之處">
+<meta property="og:description" content="The Top 10 Tips to Write Clean Code  介紹 Introduction 什麼是乾淨的代碼？ What is a clean code? 編寫乾淨代碼的重要性 The Importance of Writing Clean Code 解決問題變得容易：Solving problems becomes easy: 清晰的思想交流：Clear communication">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2023-07-14T07:00:17.000Z">
+<meta property="article:modified_time" content="2023-07-14T07:48:28.000Z">
+<meta property="article:author" content="Souts JJW">
+<meta property="article:tag" content="CleanCode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/07/14/the-top-10-tips-to-write-clean-code/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '編寫乾淨代碼的前 10 個技巧',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-14 15:48:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="記憶所及之處"><span class="site-name">記憶所及之處</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">編寫乾淨代碼的前 10 個技巧</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2023-07-14T07:00:17.000Z" title="發表於 2023-07-14 15:00:17">2023-07-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2023-07-14T07:48:28.000Z" title="更新於 2023-07-14 15:48:28">2023-07-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="編寫乾淨代碼的前 10 個技巧"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><font size=10><a target="_blank" rel="noopener" href="https://technologywolf.net/the-top-10-tips-to-write-clean-code/">The Top 10 Tips to Write Clean Code</a></font></p>
+<ul>
+<li><a href="#%E4%BB%8B%E7%B4%B9-introduction">介紹 Introduction</a></li>
+<li><a href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E4%B9%BE%E6%B7%A8%E7%9A%84%E4%BB%A3%E7%A2%BC-what-is-a-clean-code">什麼是乾淨的代碼？ What is a clean code?</a></li>
+<li><a href="#%E7%B7%A8%E5%AF%AB%E4%B9%BE%E6%B7%A8%E4%BB%A3%E7%A2%BC%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7-the-importance-of-writing-clean-code">編寫乾淨代碼的重要性 The Importance of Writing Clean Code</a><ul>
+<li><a href="#%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C%E8%AE%8A%E5%BE%97%E5%AE%B9%E6%98%93solving-problems-becomes-easy">解決問題變得容易：Solving problems becomes easy:</a></li>
+<li><a href="#%E6%B8%85%E6%99%B0%E7%9A%84%E6%80%9D%E6%83%B3%E4%BA%A4%E6%B5%81clear-communication-of-ideas">清晰的思想交流：Clear communication of ideas:</a></li>
+<li><a href="#%E9%9C%80%E8%A6%81%E6%9B%B4%E5%B0%91%E7%9A%84%E7%B6%AD%E8%AD%B7less-maintenance-required">需要更少的維護：Less maintenance required:</a></li>
+</ul>
+</li>
+<li><a href="#%E9%81%B5%E5%BE%AA%E7%9A%84%E6%9C%80%E4%BD%B3%E6%8A%80%E5%B7%A7-the-best-tips-to-follow">遵循的最佳技巧 The Best Tips to Follow</a><ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%8F%8F%E8%BF%B0%E6%80%A7%E5%90%8D%E7%A8%B1-using-descriptive-names">使用描述性名稱 Using descriptive names</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E7%A9%BA%E8%A1%8C%E5%89%B5%E5%BB%BA%E5%8F%AF%E8%AE%80%E4%BB%A3%E7%A2%BC-using-empty-lines-to-create-readable-code">使用空行創建可讀代碼 Using empty lines to create readable code</a></li>
+<li><a href="#%E4%B8%8D%E5%90%91%E5%87%BD%E6%95%B8%E7%99%BC%E9%80%81%E8%B6%85%E9%81%8E%E4%B8%89%E5%80%8B%E5%8F%83%E6%95%B8-not-sending-more-than-three-parameters-to-a-function">不向函數發送超過三個參數 Not sending more than three parameters to a function</a></li>
+<li><a href="#%E5%87%BD%E6%95%B8%E5%BF%85%E9%A0%88%E5%8F%AA%E5%9F%B7%E8%A1%8C%E4%B8%80%E9%A0%85%E4%BB%BB%E5%8B%99-the-functions-must-perform-only-one-task">函數必須只執行一項任務 The functions must perform only one task</a></li>
+<li><a href="#%E5%87%BD%E6%95%B8%E5%BF%85%E9%A0%88%E7%B0%A1%E7%9F%AD-functions-must-be-short">函數必須簡短 Functions must be short</a></li>
+<li><a href="#%E6%B8%9B%E5%B0%91%E4%B8%80%E8%A1%8C%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E6%95%B8-reducing-the-number-of-characters-in-a-line">減少一行中的字符數 Reducing the number of characters in a line</a></li>
+<li><a href="#%E8%A8%BB%E9%87%8B%E7%9A%84%E4%BD%BF%E7%94%A8-the-use-of-comments">註釋的使用 The use of comments</a></li>
+<li><a href="#%E7%82%BA%E6%8F%90%E4%BA%A4%E5%89%B5%E5%BB%BA%E6%8F%8F%E8%BF%B0%E6%80%A7%E6%B6%88%E6%81%AF-creating-descriptive-messages-for-commits">為提交創建描述性消息 Creating descriptive messages for commits</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E5%92%8C%E5%AF%A6%E8%B8%90%E6%B8%AC%E8%A9%A6%E9%A9%85%E5%8B%95%E9%96%8B%E7%99%BC-using-unit-tests-and-practicing-test-driven-development">使用單元測試和實踐測試驅動開發 Using unit tests and practicing test-driven development</a></li>
+<li><a href="#%E5%AD%B8%E7%BF%92%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-learning-design-patterns">學習設計模式 Learning Design Patterns</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B5%90%E8%AB%96-conclusion">結論 Conclusion</a></li>
+</ul>
+<h2 id="介紹-Introduction"><a href="#介紹-Introduction" class="headerlink" title="介紹 Introduction"></a>介紹 Introduction</h2><hr>
+<p>The noted software expert Robert C. Martin, in his book <em>Clean Code: A Handbook of Agile Software Craftsmanship,</em> wrote, <em>“Writing clean code is what you must do to call yourself a professional. There is no reasonable excuse for doing anything less than your best.”</em></p>
+<p>著名的軟件專家 Robert C. Martin 在他的書 <em>Clean Code：A Handbook of Agile Software Craftsmanship</em> 中寫道， <em>“編寫乾淨的代碼是您稱自己為專業人士必須做的事情。 做不到最好的事情沒有合理的藉口。”</em></p>
+<p>Programming is undoubtedly cumbersome, especially during times of AI, intelligent computation, and <a target="_blank" rel="noopener" href="https://www.headspin.io/solutions/appium-mobile-test-automation">test automation</a>. Programmers not only need to learn languages and study algorithms but also need to tend to code complex working applications. Writing clean code is similar to activities like cooking or photography — it can appear easy but hardly is. Still, it is crucial due to the wide range of benefits offered.</p>
+<p>編程無疑是繁瑣的，尤其是在人工智能、智能計算和[測試自動化]（<a target="_blank" rel="noopener" href="https://www.headspin.io/solutions/appium-mobile-test-automation%EF%BC%89%E6%99%82%E4%BB%A3%E3%80%82">https://www.headspin.io/solutions/appium-mobile-test-automation）時代。</a> 程序員不僅需要學習語言和學習算法，還需要傾向於編寫複雜的工作應用程序。 編寫乾淨的代碼類似於烹飪或攝影等活動——看起來很容易，但實際上並不容易。 儘管如此，由於提供了廣泛的好處，它仍然至關重要。</p>
+<p>A crucial feature of good software is clean code. Developers prefer to work on applications if the code is easy to understand and modify. Sometimes, the coding hastened to meet deadlines but eventually causes delay since more bugs need fixing. Studies have revealed that the time spent reading code compared to writing is higher than 10:1. Hence, the need for clean code arises.</p>
+<p>好的軟件的一個關鍵特徵是乾淨的代碼。 如果代碼易於理解和修改，開發人員更喜歡開發應用程序。 有時，編碼會加速趕上最後期限，但最終會導致延遲，因為需要修復更多錯誤。 研究表明，與編寫代碼相比，閱讀代碼所花費的時間高於 10:1。 因此，出現了對乾淨代碼的需求。</p>
+<h2 id="什麼是乾淨的代碼？-What-is-a-clean-code"><a href="#什麼是乾淨的代碼？-What-is-a-clean-code" class="headerlink" title="什麼是乾淨的代碼？ What is a clean code?"></a>什麼是乾淨的代碼？ What is a clean code?</h2><hr>
+<p>The following are the characteristics of clean code:</p>
+<p>以下是乾淨代碼的特點：</p>
+<ul>
+<li>It must be readable. </li>
+<li>它必須是可讀的。</li>
+<li>This must be elegant. </li>
+<li>這必須是優雅的。</li>
+<li>They must be easy to understand and follow the Single Responsibility Principle (SRP).</li>
+<li>它們必須易於理解並遵循單一職責原則 (SRP)。</li>
+<li>Clean Code must be easy to understand, easy to modify, and easy to maintain.</li>
+<li>Clean Code 必須易於理解、易於修改和易於維護。</li>
+<li>Clean must run tests as per the test strategy.</li>
+<li>Clean 必須按照測試策略運行測試。</li>
+</ul>
+<p>In his book, <em>Object-Oriented Analysis and Design with Applications</em>, Brady Brooch defines clean code as <em>“simple and direct. Clean code reads like well-written prose. Clean code never obscures the designer’s intent but rather is full of crisp abstractions and straightforward lines of control.”</em></p>
+<p>Brady Brooch 在他的《面向對象的分析和設計與應用程序》一書中將乾淨的代碼定義為“簡單而直接”。 乾淨的代碼讀起來就像寫得很好的散文。 乾淨的代碼永遠不會掩蓋設計者的意圖，而是充滿了清晰的抽象和簡單的控制線。”_</p>
+<h2 id="編寫乾淨代碼的重要性-The-Importance-of-Writing-Clean-Code"><a href="#編寫乾淨代碼的重要性-The-Importance-of-Writing-Clean-Code" class="headerlink" title="編寫乾淨代碼的重要性 The Importance of Writing Clean Code"></a>編寫乾淨代碼的重要性 The Importance of Writing Clean Code</h2><hr>
+<p>There are several advantages to writing clean code. Some of them include the following:</p>
+<p>編寫乾淨的代碼有幾個優點。 其中一些包括以下內容：</p>
+<h3 id="解決問題變得容易：Solving-problems-becomes-easy"><a href="#解決問題變得容易：Solving-problems-becomes-easy" class="headerlink" title="解決問題變得容易：Solving problems becomes easy:"></a>解決問題變得容易：Solving problems becomes easy:</h3><p>Clean codes change problem-solving radically. The software design and algorithms become more intentional and elegant, opposing obligatory and constrained solutions.</p>
+<p>乾淨的代碼從根本上改變了解決問題的方式。 軟件設計和算法變得更加有意和優雅，反對強制性和受約束的解決方案。</p>
+<h3 id="清晰的思想交流：Clear-communication-of-ideas"><a href="#清晰的思想交流：Clear-communication-of-ideas" class="headerlink" title="清晰的思想交流：Clear communication of ideas:"></a>清晰的思想交流：Clear communication of ideas:</h3><p>Clean code reduces the possibility of disputes and misunderstandings amongst a group of programmers working together, leading to fewer bugs at the end of the day.</p>
+<p>乾淨的代碼減少了一起工作的一組程序員之間發生爭議和誤解的可能性，最終減少了錯誤。</p>
+<h3 id="需要更少的維護：Less-maintenance-required"><a href="#需要更少的維護：Less-maintenance-required" class="headerlink" title="需要更少的維護：Less maintenance required:"></a>需要更少的維護：Less maintenance required:</h3><p>Clean code is easier to read and understand, so less time is spent on deciphering the function of the segments and leaving more time for updates, revision, and extensions.</p>
+<p>乾淨的代碼更易於閱讀和理解，因此花費在破譯段功能上的時間更少，而為更新、修訂和擴展留出了更多時間。</p>
+<h2 id="遵循的最佳技巧-The-Best-Tips-to-Follow"><a href="#遵循的最佳技巧-The-Best-Tips-to-Follow" class="headerlink" title="遵循的最佳技巧 The Best Tips to Follow"></a>遵循的最佳技巧 The Best Tips to Follow</h2><hr>
+<p>After discussing the definition and importance of clean code, here are the top 10 tips for writing and implementing the best strategies.</p>
+<p>在討論乾淨代碼的定義和重要性之後，這裡是編寫和實施最佳策略的 10 大技巧。</p>
+<h3 id="使用描述性名稱-Using-descriptive-names"><a href="#使用描述性名稱-Using-descriptive-names" class="headerlink" title="使用描述性名稱 Using descriptive names"></a>使用描述性名稱 Using descriptive names</h3><p>The names of the functions and the variables should be as descriptive as possible. For example, to refer to the character and last name, variables <em>name developer</em> and <em>lastNameDeveloper</em> can be used instead of using <em>name</em> only. Just using <em>n</em> is even worse since it is tough to understand the components of the variable with that syntax.</p>
+<p>函數和變量的名稱應盡可能具有描述性。 例如，要引用字符和姓氏，可以使用變量 <em>name developer</em> 和 <em>lastNameDeveloper</em> 而不是僅使用 _name_。 僅使用 <em>n</em> 更糟糕，因為使用該語法很難理解變量的組成部分。</p>
+<p>The name of a function should always start with a verb. For example, a module that returns the developer’s name, <em>getDeveloperName</em>, can be used instead of a method that calls <em>name</em>.</p>
+<p>函數的名稱應始終以動詞開頭。 例如，可以使用返回開發人員姓名 <em>getDeveloperName</em> 的模塊來代替調用 <em>name</em> 的方法。</p>
+<h3 id="使用空行創建可讀代碼-Using-empty-lines-to-create-readable-code"><a href="#使用空行創建可讀代碼-Using-empty-lines-to-create-readable-code" class="headerlink" title="使用空行創建可讀代碼 Using empty lines to create readable code"></a>使用空行創建可讀代碼 Using empty lines to create readable code</h3><p>The benefits of using empty lines are as follows:<br>使用空行的好處如下：</p>
+<ul>
+<li>They add clarity to the code. </li>
+<li>它們增加了代碼的清晰度。</li>
+<li>An extra line identifies where the functions end effortlessly. </li>
+<li>額外的一行標識了函數在哪裡結束。</li>
+<li>Lines separate the declaration of the variable from the operation function. </li>
+<li>行將變量的聲明與操作函數分開。</li>
+<li>A line before the returned value helps understand the operation.</li>
+<li>返回值前的一行有助於理解操作。</li>
+</ul>
+<h3 id="不向函數發送超過三個參數-Not-sending-more-than-three-parameters-to-a-function"><a href="#不向函數發送超過三個參數-Not-sending-more-than-three-parameters-to-a-function" class="headerlink" title="不向函數發送超過三個參數 Not sending more than three parameters to a function"></a>不向函數發送超過三個參數 Not sending more than three parameters to a function</h3><p>Using a cluster of parameters in a function makes it difficult to find where they are used. Instead, using only three parameters and following their logic inside the function is more efficient and makes the code legible.</p>
+<p>在函數中使用一組參數使得很難找到它們的使用位置。 相反，僅使用三個參數並在函數內部遵循它們的邏輯會更有效，並使代碼清晰易讀。</p>
+<p>If more than three parameters need to be used, one object is sent to the function, and the relevant keys are used.</p>
+<p>如果需要使用三個以上的參數，則向函數發送一個對象，並使用相關鍵。</p>
+<h3 id="函數必須只執行一項任務-The-functions-must-perform-only-one-task"><a href="#函數必須只執行一項任務-The-functions-must-perform-only-one-task" class="headerlink" title="函數必須只執行一項任務 The functions must perform only one task"></a>函數必須只執行一項任務 The functions must perform only one task</h3><p>Developers should avoid writing a function that does multiple things if they want to solve one problem. A module must perform one and only one task. Having two or more short functions is better than having just one complex method.</p>
+<p>如果開發人員想解決一個問題，他們應該避免編寫一個做多項事情的函數。 一個模塊必須執行一項且僅一項任務。 擁有兩個或更多的短函數比只有一個複雜的方法要好。</p>
+<h3 id="函數必須簡短-Functions-must-be-short"><a href="#函數必須簡短-Functions-must-be-short" class="headerlink" title="函數必須簡短 Functions must be short"></a>函數必須簡短 Functions must be short</h3><p>If a complex function is required, using a class is more reliable. A method must do only one thing, as mentioned previously, and must be short.</p>
+<p>如果需要復雜的功能，使用類更可靠。 如前所述，方法必須只做一件事，並且必須很短。</p>
+<h3 id="減少一行中的字符數-Reducing-the-number-of-characters-in-a-line"><a href="#減少一行中的字符數-Reducing-the-number-of-characters-in-a-line" class="headerlink" title="減少一行中的字符數 Reducing the number of characters in a line"></a>減少一行中的字符數 Reducing the number of characters in a line</h3><p>Keeping away from long lines of code makes it easier to read. The size of a line must fit on the screen so that a horizontal scroll is not required. Many tools like Prettier allow developers to control the format of their code.</p>
+<p>遠離長行代碼使其更易於閱讀。 行的大小必須適合屏幕，這樣就不需要水平滾動。 Prettier 等許多工具允許開發人員控制其代碼的格式。</p>
+<h3 id="註釋的使用-The-use-of-comments"><a href="#註釋的使用-The-use-of-comments" class="headerlink" title="註釋的使用 The use of comments"></a>註釋的使用 The use of comments</h3><p>Using comments helps to maintain the code. Although comments can be avoided by employing descriptive names for the functions and the variables, it is not recommended. Comments make the code lucid and coherent.</p>
+<p>使用註釋有助於維護代碼。 雖然可以通過對函數和變量使用描述性名稱來避免註釋，但不建議這樣做。 註釋使代碼清晰連貫。</p>
+<h3 id="為提交創建描述性消息-Creating-descriptive-messages-for-commits"><a href="#為提交創建描述性消息-Creating-descriptive-messages-for-commits" class="headerlink" title="為提交創建描述性消息 Creating descriptive messages for commits"></a>為提交創建描述性消息 Creating descriptive messages for commits</h3><p>A commit requires a descriptive message. It comes in handy to comprehend the function of the code in the future. Statements that do not provide sufficient information should be avoided. </p>
+<p>提交需要描述性消息。 方便以後理解代碼的作用。 應避免提供不充分信息的陳述。</p>
+<p>Only writing messages like <em>refactoring</em> is not logical enough for developers. Statements like <em>getting client information from CRM</em> are appropriate.</p>
+<p>對於開發人員來說，只寫像 <em>refactoring</em> 這樣的消息是不夠合乎邏輯的。 <em>從 CRM 獲取客戶信息</em> 之類的語句是合適的。</p>
+<h3 id="使用單元測試和實踐測試驅動開發-Using-unit-tests-and-practicing-test-driven-development"><a href="#使用單元測試和實踐測試驅動開發-Using-unit-tests-and-practicing-test-driven-development" class="headerlink" title="使用單元測試和實踐測試驅動開發 Using unit tests and practicing test-driven development"></a>使用單元測試和實踐測試驅動開發 Using unit tests and practicing test-driven development</h3><p>Writing a unit test is a crucial step in development. It makes the code clean, flexible as well as maintainable. The process of modifying the code and reducing bugs becomes easy. Test-Driven Development (TDD) is a process in software development in which requirements are converted into specific test cases, followed by software improvements for passing new tests. According to Robert C. Martin, the three laws of TDD are as follows:</p>
+<p>編寫單元測試是開發中的關鍵步驟。 它使代碼乾淨、靈活且可維護。 修改代碼和減少錯誤的過程變得容易。 測試驅動開發 (TDD) 是軟件開發中的一個過程，其中將需求轉換為特定的測試用例，然後進行軟件改進以通過新的測試。 根據 Robert C. Martin 的說法，TDD 的三個定律如下：</p>
+<ul>
+<li>A production code should make a failing unit test pass.</li>
+<li>生產代碼應該使失敗的單元測試通過。</li>
+<li>A unit test should not be written as sufficient to fail, and compilation failures are failures.</li>
+<li>單元測試不應該寫成足以失敗，編譯失敗就是失敗。</li>
+<li>Only the production code that is sufficient to pass the one failing unit test should be written.</li>
+<li>只應編寫足以通過一個失敗的單元測試的生產代碼。</li>
+</ul>
+<h3 id="學習設計模式-Learning-Design-Patterns"><a href="#學習設計模式-Learning-Design-Patterns" class="headerlink" title="學習設計模式 Learning Design Patterns"></a>學習設計模式 Learning Design Patterns</h3><p>Design Patterns is an extensive field that provides, for example, the solutions discovered by experienced and noted developers for dealing with common problems in software.</p>
+<p>設計模式是一個廣泛的領域，例如，提供由經驗豐富且著名的開發人員發現的用於處理軟件中常見問題的解決方案。</p>
+<h2 id="結論-Conclusion"><a href="#結論-Conclusion" class="headerlink" title="結論 Conclusion"></a>結論 Conclusion</h2><hr>
+<p>Clean coding is a skill that requires extensive practice.</p>
+<p>乾淨的編碼是一項需要大量練習的技能。</p>
+<p>HeadSpin offers easy and convenient <a target="_blank" rel="noopener" href="https://www.headspin.io/blog/what-is-end-to-end-testing">solutions for end-to-end testing</a>. With 200k daily product touches and 18k+ daily performance sessions, the top global companies like Wipro, Tinder, Disney, Dell, and Pinterest prefer HeadSpin. Seamless integration into CI&#x2F;CD workflows and functional and performance testing is now possible with this responsive testing software platform. Start your free trial today!</p>
+<p>HeadSpin 提供簡單方便的 <a target="_blank" rel="noopener" href="https://www.headspin.io/blog/what-is-end-to-end-testing">端到端測試解決方案</a>。 Wipro、Tinder、迪士尼、戴爾和 Pinterest 等全球頂級公司更喜歡 HeadSpin，每天有 200k 次產品接觸和 18k+ 次每日性能會話。 借助這個響應式測試軟件平台，現在可以無縫集成到 CI&#x2F;CD 工作流程以及功能和性能測試中。 開始免費試用！</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CleanCode/">CleanCode</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/14/long-names-are-long/" title="如何為變數命名"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">如何為變數命名</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/" title="如何使用 Hexo + GitHub Pages 架設個人網誌"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">如何使用 Hexo + GitHub Pages 架設個人網誌</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2023/07/14/long-names-are-long/" title="如何為變數命名"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-14</div><div class="title">如何為變數命名</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Souts JJW</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%B4%B9-Introduction"><span class="toc-number">1.</span> <span class="toc-text">介紹 Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E4%B9%BE%E6%B7%A8%E7%9A%84%E4%BB%A3%E7%A2%BC%EF%BC%9F-What-is-a-clean-code"><span class="toc-number">2.</span> <span class="toc-text">什麼是乾淨的代碼？ What is a clean code?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B7%A8%E5%AF%AB%E4%B9%BE%E6%B7%A8%E4%BB%A3%E7%A2%BC%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7-The-Importance-of-Writing-Clean-Code"><span class="toc-number">3.</span> <span class="toc-text">編寫乾淨代碼的重要性 The Importance of Writing Clean Code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C%E8%AE%8A%E5%BE%97%E5%AE%B9%E6%98%93%EF%BC%9ASolving-problems-becomes-easy"><span class="toc-number">3.1.</span> <span class="toc-text">解決問題變得容易：Solving problems becomes easy:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E6%99%B0%E7%9A%84%E6%80%9D%E6%83%B3%E4%BA%A4%E6%B5%81%EF%BC%9AClear-communication-of-ideas"><span class="toc-number">3.2.</span> <span class="toc-text">清晰的思想交流：Clear communication of ideas:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9C%80%E8%A6%81%E6%9B%B4%E5%B0%91%E7%9A%84%E7%B6%AD%E8%AD%B7%EF%BC%9ALess-maintenance-required"><span class="toc-number">3.3.</span> <span class="toc-text">需要更少的維護：Less maintenance required:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%B5%E5%BE%AA%E7%9A%84%E6%9C%80%E4%BD%B3%E6%8A%80%E5%B7%A7-The-Best-Tips-to-Follow"><span class="toc-number">4.</span> <span class="toc-text">遵循的最佳技巧 The Best Tips to Follow</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8F%8F%E8%BF%B0%E6%80%A7%E5%90%8D%E7%A8%B1-Using-descriptive-names"><span class="toc-number">4.1.</span> <span class="toc-text">使用描述性名稱 Using descriptive names</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%A9%BA%E8%A1%8C%E5%89%B5%E5%BB%BA%E5%8F%AF%E8%AE%80%E4%BB%A3%E7%A2%BC-Using-empty-lines-to-create-readable-code"><span class="toc-number">4.2.</span> <span class="toc-text">使用空行創建可讀代碼 Using empty lines to create readable code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%91%E5%87%BD%E6%95%B8%E7%99%BC%E9%80%81%E8%B6%85%E9%81%8E%E4%B8%89%E5%80%8B%E5%8F%83%E6%95%B8-Not-sending-more-than-three-parameters-to-a-function"><span class="toc-number">4.3.</span> <span class="toc-text">不向函數發送超過三個參數 Not sending more than three parameters to a function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B8%E5%BF%85%E9%A0%88%E5%8F%AA%E5%9F%B7%E8%A1%8C%E4%B8%80%E9%A0%85%E4%BB%BB%E5%8B%99-The-functions-must-perform-only-one-task"><span class="toc-number">4.4.</span> <span class="toc-text">函數必須只執行一項任務 The functions must perform only one task</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B8%E5%BF%85%E9%A0%88%E7%B0%A1%E7%9F%AD-Functions-must-be-short"><span class="toc-number">4.5.</span> <span class="toc-text">函數必須簡短 Functions must be short</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%9B%E5%B0%91%E4%B8%80%E8%A1%8C%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E6%95%B8-Reducing-the-number-of-characters-in-a-line"><span class="toc-number">4.6.</span> <span class="toc-text">減少一行中的字符數 Reducing the number of characters in a line</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A8%BB%E9%87%8B%E7%9A%84%E4%BD%BF%E7%94%A8-The-use-of-comments"><span class="toc-number">4.7.</span> <span class="toc-text">註釋的使用 The use of comments</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%BA%E6%8F%90%E4%BA%A4%E5%89%B5%E5%BB%BA%E6%8F%8F%E8%BF%B0%E6%80%A7%E6%B6%88%E6%81%AF-Creating-descriptive-messages-for-commits"><span class="toc-number">4.8.</span> <span class="toc-text">為提交創建描述性消息 Creating descriptive messages for commits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E5%92%8C%E5%AF%A6%E8%B8%90%E6%B8%AC%E8%A9%A6%E9%A9%85%E5%8B%95%E9%96%8B%E7%99%BC-Using-unit-tests-and-practicing-test-driven-development"><span class="toc-number">4.9.</span> <span class="toc-text">使用單元測試和實踐測試驅動開發 Using unit tests and practicing test-driven development</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%B8%E7%BF%92%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-Learning-Design-Patterns"><span class="toc-number">4.10.</span> <span class="toc-text">學習設計模式 Learning Design Patterns</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B5%90%E8%AB%96-Conclusion"><span class="toc-number">5.</span> <span class="toc-text">結論 Conclusion</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/14/long-names-are-long/" title="如何為變數命名">如何為變數命名</a><time datetime="2023-07-14T07:36:59.000Z" title="發表於 2023-07-14 15:36:59">2023-07-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/14/the-top-10-tips-to-write-clean-code/" title="編寫乾淨代碼的前 10 個技巧">編寫乾淨代碼的前 10 個技巧</a><time datetime="2023-07-14T07:00:17.000Z" title="發表於 2023-07-14 15:00:17">2023-07-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/" title="如何使用 Hexo + GitHub Pages 架設個人網誌">如何使用 Hexo + GitHub Pages 架設個人網誌</a><time datetime="2023-07-11T09:57:25.000Z" title="發表於 2023-07-11 17:57:25">2023-07-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Souts JJW</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

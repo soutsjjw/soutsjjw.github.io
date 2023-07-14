@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>如何為變數命名 | 記憶所及之處</title><meta name="author" content="Souts JJW"><meta name="copyright" content="Souts JJW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Long Names Are Long  選擇一個好名字 Choosing a Good Name 1. 省略給定變數或參數類型明顯的單詞 Omit words that are obvious given a variable’s or parameter’s type 2. 省略不會消除名稱歧義的單詞 Omit words that don’t disambiguate the name 3.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何為變數命名">
+<meta property="og:url" content="http://example.com/2023/07/14/long-names-are-long/index.html">
+<meta property="og:site_name" content="記憶所及之處">
+<meta property="og:description" content="Long Names Are Long  選擇一個好名字 Choosing a Good Name 1. 省略給定變數或參數類型明顯的單詞 Omit words that are obvious given a variable’s or parameter’s type 2. 省略不會消除名稱歧義的單詞 Omit words that don’t disambiguate the name 3.">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2023-07-14T07:36:59.000Z">
+<meta property="article:modified_time" content="2023-07-14T07:48:04.000Z">
+<meta property="article:author" content="Souts JJW">
+<meta property="article:tag" content="CleanCode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/07/14/long-names-are-long/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '如何為變數命名',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-14 15:48:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="記憶所及之處"><span class="site-name">記憶所及之處</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">如何為變數命名</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2023-07-14T07:36:59.000Z" title="發表於 2023-07-14 15:36:59">2023-07-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2023-07-14T07:48:04.000Z" title="更新於 2023-07-14 15:48:04">2023-07-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="如何為變數命名"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><font size=10><a target="_blank" rel="noopener" href="https://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/">Long Names Are Long</a></font></p>
+<ul>
+<li><a href="#%E9%81%B8%E6%93%87%E4%B8%80%E5%80%8B%E5%A5%BD%E5%90%8D%E5%AD%97-choosing-a-good-name">選擇一個好名字 Choosing a Good Name</a><ul>
+<li><a href="#1-%E7%9C%81%E7%95%A5%E7%B5%A6%E5%AE%9A%E8%AE%8A%E6%95%B8%E6%88%96%E5%8F%83%E6%95%B8%E9%A1%9E%E5%9E%8B%E6%98%8E%E9%A1%AF%E7%9A%84%E5%96%AE%E8%A9%9E-omit-words-that-are-obvious-given-a-variables-or-parameters-type">1. 省略給定變數或參數類型明顯的單詞 Omit words that are obvious given a variable’s or parameter’s type</a></li>
+<li><a href="#2-%E7%9C%81%E7%95%A5%E4%B8%8D%E6%9C%83%E6%B6%88%E9%99%A4%E5%90%8D%E7%A8%B1%E6%AD%A7%E7%BE%A9%E7%9A%84%E5%96%AE%E8%A9%9E-omit-words-that-dont-disambiguate-the-name">2. 省略不會消除名稱歧義的單詞 Omit words that don’t disambiguate the name</a></li>
+<li><a href="#3-%E7%9C%81%E7%95%A5%E5%BE%9E%E5%91%A8%E5%9C%8D%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E5%B7%B2%E7%9F%A5%E7%9A%84%E5%96%AE%E8%A9%9E-omit-words-that-are-known-from-the-surrounding-context">3. 省略從周圍上下文中已知的單詞 Omit words that are known from the surrounding context</a></li>
+<li><a href="#4-%E7%9C%81%E7%95%A5%E7%84%A1%E6%84%8F%E7%BE%A9%E7%9A%84%E5%96%AE%E8%A9%9E-omit-words-that-dont-mean-much-of-anything">4. 省略無意義的單詞 Omit words that don’t mean much of anything</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B0%87%E6%8C%87%E5%8D%97%E6%87%89%E7%94%A8%E6%96%BC%E5%AF%A6%E4%BD%9C%E4%B8%AD-applying-the-guidelines-to-waffles">將指南應用於實作中 Applying the Guidelines… to Waffles</a></li>
+</ul>
+<p>One smart thing Google does is rigorous code reviews. Every change, before you can land it, gets reviewed in at least two ways. First, someone on the team does a normal review to make sure the code does what it’s supposed to.</p>
+<p>Google 做了一件聰明的事情就是嚴格的代碼審查。在你登錄之前，每一個變更至少要通過兩種方式進行審查。首先，團隊中的某個人會進行正常的審查，以確保代碼按照預期進行。</p>
+<p>But, then, there’s a second layer of review called <em>readability</em>. It makes sure the code is, well, readable: Is it easy to understand and maintain? Does it follow the style and idioms of the language? Is it well-documented?</p>
+<p>但是，還有第二層審查，稱為 <em>可讀性</em> 。它確保代碼是可讀的：是否易於理解和維護？它是否遵循語言的風格和習語？是否有據可查？</p>
+<p><a target="_blank" rel="noopener" href="https://www.dartlang.org/">Dart</a> usage inside Google is cranking up, so I’ve been doing a ton of these kind of code reviews. As a language designer, it’s fascinating. I get a firsthand view into how people use Dart, which is really useful for evolving the language. I have a clearer picture of which mistakes are common and which features are heavily used. I feel like an ethnographer journaling the lives of natives.</p>
+<p>Google 內部的Dart使用量正在增加，所以我一直在進行大量此類代碼審查。作為語言設計師，這很有趣。我獲得了人們如何使用 Dart 的第一手資料，這對於語言的發展非常有用。我對哪些錯誤很常見以及哪些功能被大量使用有了更清晰的了解。我覺得自己像一個紀錄當地人生活的民族誌學家。</p>
+<p>But, anyway, that’s not what this is about. Heck, it’s not even about Dart. What I want to talk about is something I see in a lot of code that drives me up the wall: <strong>identifiers that are too damn long.</strong></p>
+<p>但是，無論如何，這不是要討論的。哎呀，這甚至與 Dart 無關。我想談的是我在很多代碼中看到的讓我難以接受的東西：<strong>識別碼太長了</strong>。</p>
+<p>Yes, names can be too short. Back when C only required external identifiers to be unique up to the first six characters; auto-complete hadn’t been invented; and every keypress had to be made uphill, in the snow, both ways; it was a problem. I’m glad we now live in a futuristic utopia where keyboard farts like <code>p</code>, <code>idxcrpm</code>, and <code>x3</code> are rare.</p>
+<p>是的，名稱可能太短。回到當 C 只要求外部識別碼在前六個字符內是唯一的時；自動完成功能尚未發明；每次按鍵都必須上坡，在雪地裡，雙向；這是個問題。我很高興我們現在生活在一個未來主義的烏托邦中，鍵盤放屁像 <code>p</code>,<code>idxcrpm</code>和<code>x3</code>是罕見的。</p>
+<p>But the pendulum has swung too far in the other direction. We shouldn’t be Hemingway, but we don’t need to be Tennessee Williams either. Very <em>long</em> names also hurt the clarity of the code where they are used. Giant identifiers dwarf the operations you’re performing on them, are hard to visually scan, and force extra line breaks which interrupt the flow of the code.</p>
+<p>但是鍾擺擺向另一個方向擺動得太遠了。我們不應該成為海明威，但我們也不需要成為田納西·威廉斯。很 <em>長</em> 的名稱也會損害使用它們的代碼的清晰度。巨大的識別碼使您對它們執行的操作相形見絀，難以目視掃描，並強制額外的換行符中斷代碼流。</p>
+<p>Long class names discourage users from declaring variables of that type, leading to massive, gnarly nested expressions instead of hoisting things out to locals. Long method names obscure their equally important argument lists. Long variables are annoying to use repeatedly, leading to sprawling method chains or cascades.</p>
+<p>長類別名不鼓勵用戶聲明該類型的變量，導致大量的、粗糙的嵌套表達式，而不是把東西提升到本地人。長方法名稱掩蓋了它們同樣重要的參數列表。長變量重複使用很煩人，導致方法鍊或級聯蔓延。</p>
+<p>I’ve seen identifiers over 60 characters long. You could fit a haiku or a koan in there (and likely enlighten the reader more than the actual chosen name did). Fear not, I am here to help.</p>
+<p>我見過超過 60 個字元的識別碼。您可以在其中放置俳句或公案（並且可能比實際選擇的名稱更能啟發讀者）。不要害怕，我是來幫忙的。</p>
+<h2 id="選擇一個好名字-Choosing-a-Good-Name"><a href="#選擇一個好名字-Choosing-a-Good-Name" class="headerlink" title="選擇一個好名字 Choosing a Good Name"></a>選擇一個好名字 Choosing a Good Name</h2><hr>
+<p>A name has two goals:</p>
+<p>一個名字有兩個目的：</p>
+<ul>
+<li><p>It needs to be <em>clear</em>: you need to know what the name refers to.</p>
+</li>
+<li><p>需要明確：您需要知道名稱所指的內容。</p>
+</li>
+<li><p>It needs to be <em>precise</em>: you need to know what it does <em>not</em> refer to.</p>
+</li>
+<li><p>需要精確：您需要知道它 <em>沒有</em> 代指什麼。</p>
+</li>
+</ul>
+<p>After a name has accomplished those goals, any additional characters are dead weight. Here’s some guidelines I use when I names things in my code:</p>
+<p>在一個名稱完成了這些目標之後，任何額外的角色都是自重的。以下是我在代碼中命名事物時使用的一些準則：</p>
+<h3 id="1-省略給定變數或參數類型明顯的單詞-Omit-words-that-are-obvious-given-a-variable’s-or-parameter’s-type"><a href="#1-省略給定變數或參數類型明顯的單詞-Omit-words-that-are-obvious-given-a-variable’s-or-parameter’s-type" class="headerlink" title="1. 省略給定變數或參數類型明顯的單詞 Omit words that are obvious given a variable’s or parameter’s type"></a>1. 省略給定變數或參數類型明顯的單詞 Omit words that are obvious given a variable’s or parameter’s type</h3><p>If your language has a static type system, users usually know the type of a variable. Methods tend to be short, so even when looking at local variable whose type was inferred, or in a code review or some place where static analysis isn’t available, it rarely takes more than scanning a few lines to tell what type a variable has.</p>
+<p>如果您的語言具有靜態類型系統，則使用者通常知道變數的類型。方法內容往往很短，因此，即使查看了推斷的類型，或者在代碼審查或某個地方無法進行靜態分析的地方，它也很少需要掃描幾行來告訴一個變數具有什麼類型。</p>
+<p>Given that, it’s redundant to put the type in the variable’s name. We have rightfully abandoned <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Hungarian_notation">Hungarian notation</a>. <em>Let it go.</em></p>
+<p>有鑑於此，將類型放在變數名中是多餘的。我們理所當然地放棄了<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-tw/%E5%8C%88%E7%89%99%E5%88%A9%E5%91%BD%E5%90%8D%E6%B3%95">匈牙利命名法</a> 。_放手吧_。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Bad:</span><br><span class="line">String nameString;</span><br><span class="line">DockableModelessWindow dockableModelessWindow;</span><br><span class="line"></span><br><span class="line">// Better:</span><br><span class="line">String name;</span><br><span class="line">DockableModelessWindow window;</span><br></pre></td></tr></table></figure>
+
+<p>In particular, for collections, it’s almost always better to just use a plural noun describing the <em>contents</em> instead of a singular noun describing the <em>collection</em>. If the reader cares more about what’s <em>in</em> the collection, the name should reflect that.</p>
+<p>特別是對於集合，僅使用描述內容的複數名詞而不是描述該 <em>集合</em> 的單數名詞，幾乎總是更好。如果讀者更多地關心收藏中的內容，則該名稱應該反映出這一點。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Bad:</span><br><span class="line">List&lt;DateTime&gt; holidayDateList;</span><br><span class="line">Map&lt;Employee, Role&gt; employeeRoleHashMap;</span><br><span class="line"></span><br><span class="line">// Better:</span><br><span class="line">List&lt;DateTime&gt; holidays;</span><br><span class="line">Map&lt;Employee, Role&gt; employeeRoles;</span><br></pre></td></tr></table></figure>
+
+<p>This also applies to method names. The method name doesn’t need to describe its parameters or their types—the parameter list does that for you.</p>
+<p>這也適用於方法名稱。方法名稱不需要描述它的參數或它們的類型——參數列表會為你做這些。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Bad:</span><br><span class="line">mergeTableCells(List&lt;TableCell&gt; cells)</span><br><span class="line">sortEventsUsingComparator(List&lt;Event&gt; events, Comparator&lt;Event&gt; comparator)</span><br><span class="line"></span><br><span class="line">// Better:</span><br><span class="line">merge(List&lt;TableCell&gt; cells)</span><br><span class="line">sort(List&lt;Event&gt; events, Comparator&lt;Event&gt; comparator)</span><br></pre></td></tr></table></figure>
+
+<p>This tends to make callsites read better:</p>
+<p>這往往會使呼叫端更好地閱讀：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mergeTableCells(tableCells);</span><br><span class="line">sortEventsUsingComparator(events, comparator);</span><br></pre></td></tr></table></figure>
+
+<p>Is it just me, or is there an echo echo in here here?</p>
+<p>是只有我，還是這裡有迴聲？</p>
+<h3 id="2-省略不會消除名稱歧義的單詞-Omit-words-that-don’t-disambiguate-the-name"><a href="#2-省略不會消除名稱歧義的單詞-Omit-words-that-don’t-disambiguate-the-name" class="headerlink" title="2. 省略不會消除名稱歧義的單詞 Omit words that don’t disambiguate the name"></a>2. 省略不會消除名稱歧義的單詞 Omit words that don’t disambiguate the name</h3><p>Some people tend to cram everything they know about something into its name. Remember, the name is an <em>identifier</em>: it points you to <em>where</em> it’s defined. It’s not an exhaustive catalog of everything the reader could want to know about the object. The definition does that. The name just gets them there.</p>
+<p>有些人傾向於把他們所知道關於某事的一切都塞進它的名稱中。請記住，名稱是一個 <em>識別碼</em> ：它指向您定義它的位置。這不是讀者可能想知道的關於該物件的所有內容的詳盡目錄。定義就是這樣做的。這個名稱只是讓他們在那裡。</p>
+<p>When I see an identifier like <code>recentlyUpdatedAnnualSalesBid</code>, I ask:</p>
+<p>當我看到類似的識別碼時<code>recentlyUpdatedAnnualSalesBid</code>，我會問：</p>
+<ul>
+<li><p>Are there updated annual sales bids that aren’t recent?</p>
+</li>
+<li><p>是否有更新但不是最近的年度銷售出價？</p>
+</li>
+<li><p>Are there recent annual sales bids that were not updated?</p>
+</li>
+<li><p>最近是否有未更新的年度銷售投標？</p>
+</li>
+<li><p>Are there recently updated sales bids that aren’t annual?</p>
+</li>
+<li><p>是否有最近更新的非年度銷售出價？</p>
+</li>
+<li><p>Are there recently updated annual bids not related to sales?</p>
+</li>
+<li><p>是否有最近更新的與銷售無關的年度投標？</p>
+</li>
+<li><p>Are there recently updated annual sales things that are not bids?</p>
+</li>
+<li><p>是否有最近更新的非投標年度銷售額？</p>
+</li>
+</ul>
+<p>A “no” for any of these usually points to an extraneous word.</p>
+<p>其中任何一個的“否”通常指向一個無關緊要的詞。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Bad:</span><br><span class="line">finalBattleMostDangerousBossMonster;</span><br><span class="line">weaklingFirstEncounterMonster;</span><br><span class="line"></span><br><span class="line">// Better:</span><br><span class="line">boss;</span><br><span class="line">firstMonster;</span><br></pre></td></tr></table></figure>
+
+<p>Of course, you can go too far. Shortening that first example to <code>bid</code> might be a little <em>too</em> vague. But, when in doubt, leave it out. You can always add qualifiers later if the name proves to cause a collision or be imprecise but it’s unlikely you’ll come back later to trim the fat.</p>
+<p>當然，你可以執行的更撤底一點。將第一個示例縮短為<code>bid</code>可能有點太模糊了。但是，如果有疑問，請忽略它。如果名稱被證明會導致衝突或不精確，您可以隨時回來添加限定詞，但您不太可能稍後再回來修剪多餘的部分。</p>
+<h3 id="3-省略從周圍上下文中已知的單詞-Omit-words-that-are-known-from-the-surrounding-context"><a href="#3-省略從周圍上下文中已知的單詞-Omit-words-that-are-known-from-the-surrounding-context" class="headerlink" title="3. 省略從周圍上下文中已知的單詞 Omit words that are known from the surrounding context"></a>3. 省略從周圍上下文中已知的單詞 Omit words that are known from the surrounding context</h3><p>I can use “I” in this paragraph because you can see this post is by Bob Nystrom. My dumb face is right up there. I don’t need to keep saying “Bob Nystrom” everywhere here (despite Bob Nystrom’s temptation to aggrandize Bob Nystrom by doing so). Code works the same way. A method or field occurs in the context of a class. A variable occurs in the context of a method. Take that context for granted and don’t repeat it.</p>
+<p>我可以在這一段中使用“我”，因為你可以看到這篇文章是 Bob Nystrom 寫的。我的傻臉就在上面。我不需要在這裡到處說“Bob Nystrom”（儘管 Bob Nystrom 很想通過這樣做來強化 Bob Nystrom）。代碼的工作方式相同。方法或欄位出現在類別的語境中。變量出現在方法的語境中。把這個語境視為理所當然，不要重複它。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Bad:</span><br><span class="line">class AnnualHolidaySale &#123;</span><br><span class="line">  int _annualSaleRebate;</span><br><span class="line">  void promoteHolidaySale() &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Better:</span><br><span class="line">class AnnualHolidaySale &#123;</span><br><span class="line">  int _rebate;</span><br><span class="line">  void promote() &#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>In practice, this means that the more deeply nested a name is, the more surrounding context it has. That in turn means it usually has a shorter name. The effect is that identifiers with shorter scopes have shorter names.</p>
+<p>在實踐中，這意味著名稱嵌套越深，其周圍的語境就越多。這反過來意味著它通常有一個較短的名稱。效果是具有較短範圍的識別碼具有較短的名稱。</p>
+<h3 id="4-省略無意義的單詞-Omit-words-that-don’t-mean-much-of-anything"><a href="#4-省略無意義的單詞-Omit-words-that-don’t-mean-much-of-anything" class="headerlink" title="4. 省略無意義的單詞 Omit words that don’t mean much of anything"></a>4. 省略無意義的單詞 Omit words that don’t mean much of anything</h3><p>I used to see this a lot in the game industry. Some people succumb to the temptation to inflate their identifiers by adding Serious Business sounding words. I guess it makes their code feel more important and, by extension, makes <em>them</em> feel more important.</p>
+<p>我以前在遊戲行業經常看到這種情況。有些人屈服於誘惑通過添加認真的商業聲音來誇大其識別碼。我想這會讓他們的代碼感覺更重要，並且通過擴展，讓 <em>他們</em> 感覺更重要。</p>
+<p>In many cases, the words carry no meaningful information. They’re just fluff or jargon. Usual suspects include: <code>data</code>, <code>state</code>, <code>amount</code>, <code>value</code>, <code>manager</code>, <code>engine</code>, <code>object</code>, <code>entity</code>, and <code>instance</code>.</p>
+<p>在許多情況下，這些單詞沒有任何有意義的訊息。它們只是枝微末節或行話。通常的嫌疑人包括：<code>data</code>, <code>state</code>, <code>amount</code>, <code>value</code>, <code>manager</code>, <code>engine</code>, <code>object</code>, <code>entity</code>, 和<code>instance</code>。</p>
+<p>A good name paints a picture in the mind of the reader. Calling something a “manager” doesn’t convey any image to the reader about what the thing does. Does it do performance evaluations? Lean over your cubicle and ask for TPS reports?</p>
+<p>一個好名稱會在讀者的腦海中描繪了一幅畫面。稱某事物為“經理”並不能向讀者傳達任何關於該事物的作用的形象。是否對它進行績效評估？倚靠你的隔間並要求 TPS 報告？</p>
+<p>Ask yourself “Would this identifier mean the same thing if I removed the word?” If so, the word doesn’t carry its weight. Vote if off the island.</p>
+<p>問問自己“如果我刪除了這個詞，這個識別碼是否意味著同樣的事情？” 如果是這樣，這個詞就沒有分量了。如果離島投票。</p>
+<h2 id="將指南應用於實作中-Applying-the-Guidelines…-to-Waffles"><a href="#將指南應用於實作中-Applying-the-Guidelines…-to-Waffles" class="headerlink" title="將指南應用於實作中 Applying the Guidelines… to Waffles"></a>將指南應用於實作中 Applying the Guidelines… to Waffles</h2><hr>
+<p>To give you a feel for how these rules work in practice, here’s an example that breaks all of these rules. This contrived example is tragically close to real code I’ve seen in reviews:</p>
+<p>為了讓您了解這些規則在實踐中的運作方式，下面是一個打破所有這些規則的示例。這個人為的例子與我在評論中看到的真實代碼非常接近：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class DeliciousBelgianWaffleObject &#123;</span><br><span class="line">  void garnishDeliciousBelgianWaffleWithStrawberryList(</span><br><span class="line">      List&lt;Strawberry&gt; strawberryList) &#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>We know from the type that it takes a list of strawberries (#1), so let’s cut that out:</p>
+<p>我們從類型中知道它需要一個草莓列表（#1），所以讓我們把它刪掉：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class DeliciousBelgianWaffleObject &#123;</span><br><span class="line">    void garnishDeliciousBelgianWaffle(</span><br><span class="line">        List&lt;Strawberry&gt; strawberries) &#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Unless our program has foul-tasting Belgian waffles, or waffles of other nationalities, we can drop those adjectives (#2):</p>
+<p>除非我們的程式碼有難聞的比利時華夫餅或其他國籍的華夫餅，否則我們可以去掉這些形容詞（#2）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class WaffleObject &#123;</span><br><span class="line">  void garnishWaffle(List&lt;Strawberry&gt; strawberries) &#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The method is inside a <code>WaffleObject</code>, so we know what it’s going to garnish (#3):</p>
+<p>該方法在<code>WaffleObject</code>中，所以我們知道它要裝飾什麼（#3）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class WaffleObject &#123;</span><br><span class="line">  void garnish(List&lt;Strawberry&gt; strawberries) &#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Obviously it’s an object. Everything is an object. That’s kind of what “object-oriented” means (#4):</p>
+<p>顯然它是一個物件。一切都是物件。這就是“物件導向”的意思（#4）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Waffle &#123;</span><br><span class="line">  void garnish(List&lt;Strawberry&gt; strawberries) &#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>There, much better.</p>
+<p>這樣好多了。</p>
+<p>I think these are pretty simple guidelines. You may think it’s pointless to worry about this stuff, but I believe that <a target="_blank" rel="noopener" href="https://journal.stuffwithstuff.com/2009/06/05/naming-things-in-code/">naming things</a> is one of the most fundamental tasks we do when programming. Names are the structure we impose on the formless sea of bits that is computing.</p>
+<p>我認為這些是非常簡單的指導方針。您可能認為擔心這些東西是沒有意義的，但我相信<a target="_blank" rel="noopener" href="https://journal.stuffwithstuff.com/2009/06/05/naming-things-in-code/">命名事物</a>是我們在編程時所做的最基本的任務之一。名稱是我們強加在計算的無形的位元海洋上的結構。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CleanCode/">CleanCode</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/07/14/the-top-10-tips-to-write-clean-code/" title="編寫乾淨代碼的前 10 個技巧"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">編寫乾淨代碼的前 10 個技巧</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2023/07/14/the-top-10-tips-to-write-clean-code/" title="編寫乾淨代碼的前 10 個技巧"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-14</div><div class="title">編寫乾淨代碼的前 10 個技巧</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Souts JJW</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%B8%E6%93%87%E4%B8%80%E5%80%8B%E5%A5%BD%E5%90%8D%E5%AD%97-Choosing-a-Good-Name"><span class="toc-number">1.</span> <span class="toc-text">選擇一個好名字 Choosing a Good Name</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%9C%81%E7%95%A5%E7%B5%A6%E5%AE%9A%E8%AE%8A%E6%95%B8%E6%88%96%E5%8F%83%E6%95%B8%E9%A1%9E%E5%9E%8B%E6%98%8E%E9%A1%AF%E7%9A%84%E5%96%AE%E8%A9%9E-Omit-words-that-are-obvious-given-a-variable%E2%80%99s-or-parameter%E2%80%99s-type"><span class="toc-number">1.1.</span> <span class="toc-text">1. 省略給定變數或參數類型明顯的單詞 Omit words that are obvious given a variable’s or parameter’s type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%9C%81%E7%95%A5%E4%B8%8D%E6%9C%83%E6%B6%88%E9%99%A4%E5%90%8D%E7%A8%B1%E6%AD%A7%E7%BE%A9%E7%9A%84%E5%96%AE%E8%A9%9E-Omit-words-that-don%E2%80%99t-disambiguate-the-name"><span class="toc-number">1.2.</span> <span class="toc-text">2. 省略不會消除名稱歧義的單詞 Omit words that don’t disambiguate the name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%9C%81%E7%95%A5%E5%BE%9E%E5%91%A8%E5%9C%8D%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E5%B7%B2%E7%9F%A5%E7%9A%84%E5%96%AE%E8%A9%9E-Omit-words-that-are-known-from-the-surrounding-context"><span class="toc-number">1.3.</span> <span class="toc-text">3. 省略從周圍上下文中已知的單詞 Omit words that are known from the surrounding context</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%9C%81%E7%95%A5%E7%84%A1%E6%84%8F%E7%BE%A9%E7%9A%84%E5%96%AE%E8%A9%9E-Omit-words-that-don%E2%80%99t-mean-much-of-anything"><span class="toc-number">1.4.</span> <span class="toc-text">4. 省略無意義的單詞 Omit words that don’t mean much of anything</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%87%E6%8C%87%E5%8D%97%E6%87%89%E7%94%A8%E6%96%BC%E5%AF%A6%E4%BD%9C%E4%B8%AD-Applying-the-Guidelines%E2%80%A6-to-Waffles"><span class="toc-number">2.</span> <span class="toc-text">將指南應用於實作中 Applying the Guidelines… to Waffles</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/14/long-names-are-long/" title="如何為變數命名">如何為變數命名</a><time datetime="2023-07-14T07:36:59.000Z" title="發表於 2023-07-14 15:36:59">2023-07-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/14/the-top-10-tips-to-write-clean-code/" title="編寫乾淨代碼的前 10 個技巧">編寫乾淨代碼的前 10 個技巧</a><time datetime="2023-07-14T07:00:17.000Z" title="發表於 2023-07-14 15:00:17">2023-07-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/11/20230711-how-to-use-hexo-and-pull-github/" title="如何使用 Hexo + GitHub Pages 架設個人網誌">如何使用 Hexo + GitHub Pages 架設個人網誌</a><time datetime="2023-07-11T09:57:25.000Z" title="發表於 2023-07-11 17:57:25">2023-07-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Souts JJW</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
