@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>16個小的UI設計規則卻能產生巨大的影響 | 記憶所及之處</title><meta name="author" content="Souts JJW"><meta name="copyright" content="Souts JJW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="用戶介面設計是一項困難的任務。 面對眾多的佈局、間距、排版和顏色選項，做出設計決策可能會令人感到壓力山大。 當你再加上可用性、可訪問性和心理學因素，任務難度進一步增加。 User interface design is hard. With so many options to choose from regarding layout, spacing, typography, and col">
+<meta property="og:type" content="article">
+<meta property="og:title" content="16個小的UI設計規則卻能產生巨大的影響">
+<meta property="og:url" content="http://example.com/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/index.html">
+<meta property="og:site_name" content="記憶所及之處">
+<meta property="og:description" content="用戶介面設計是一項困難的任務。 面對眾多的佈局、間距、排版和顏色選項，做出設計決策可能會令人感到壓力山大。 當你再加上可用性、可訪問性和心理學因素，任務難度進一步增加。 User interface design is hard. With so many options to choose from regarding layout, spacing, typography, and col">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2023-07-25T09:38:20.000Z">
+<meta property="article:modified_time" content="2023-07-27T02:44:10.632Z">
+<meta property="article:author" content="Souts JJW">
+<meta property="article:tag" content="UI&#x2F;UX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '16個小的UI設計規則卻能產生巨大的影響',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-27 10:44:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="記憶所及之處"><span class="site-name">記憶所及之處</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">16個小的UI設計規則卻能產生巨大的影響</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2023-07-25T09:38:20.000Z" title="發表於 2023-07-25 17:38:20">2023-07-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2023-07-27T02:44:10.632Z" title="更新於 2023-07-27 10:44:10">2023-07-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="16個小的UI設計規則卻能產生巨大的影響"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/BfgSsZ5.png" class="" title="label">
+
+<p>用戶介面設計是一項困難的任務。 面對眾多的佈局、間距、排版和顏色選項，做出設計決策可能會令人感到壓力山大。 當你再加上可用性、可訪問性和心理學因素，任務難度進一步增加。</p>
+<p>User interface design is hard. With so many options to choose from regarding layout, spacing, typography, and colour, making design decisions can be overwhelming. When you add usability, accessibility, and psychology to the mix, it gets even harder.</p>
+<p>幸運的是，UI設計並非總是如此艱難。 在近二十年的產品設計工作中，我意識到我大部分的視覺和交互設計決策都是受一套邏輯規則的指導。 這不是藝術的熱情或神奇的直覺，只是簡單的規則。</p>
+<p>Luckily, UI design doesn’t have to be so hard. Over nearly 2 decades working as a product designer, I’ve realised that most of my visual and interaction design decisions are governed by a system of logical rules. Not artistic flair or magical intuition, just simple rules.</p>
+<p>擁有一套邏輯規則可以説明你高效地做出明智的設計決策。 沒有邏輯體系，你只能憑直覺隨意調整，直到它看起來美觀。</p>
+<p>Having a system of logical rules helps you efficiently make informed design decisions. Without a logical system, you’re just using gut feeling to move stuff around until it looks pretty.</p>
+<p>我熱愛規則和邏輯，但設計決策很少是非黑即白的。 與其將以下的建議視為必須遵守的嚴格規則，不如把它們看作是在大多數情況下都能奏效的有用指南。</p>
+<p>I love rules and logic, but design decisions are rarely black and white. Rather than strict rules that you must follow, think of the following advice as helpful guidelines that work well in most cases.</p>
+<p>學習最快的方式就是動手實踐，所以讓我們開始吧。</p>
+<p>The quickest way to learn is by doing, so let’s get started.</p>
+<h2>使用邏輯規則來修復這個例子 Let’s fix this example using logical rules</h2>
+
+<p>以下兩個設計是短期房產租賃應用的房產詳情頁面。 第一個是原始設計。 第二個是應用了一些邏輯規則或指南后的結果。</p>
+<p>The following 2 designs are for the property details page of a short-term property rental app. The first one is the original design. The second is the result of applying some logical rules or guidelines.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/20L55Jb.png" class="" title="label">
+
+<p>即使沒有太多的視覺或交互設計經驗，你可能也會注意到原始設計感覺混亂、複雜，並且難以使用。 這是因為它包含了許多可能對可用性構成風險的問題設計細節。 也許你已經發現了其中的一些？</p>
+<p>Even without much visual or interaction design experience, you’ll probably notice that the original design feels messy, complicated, and difficult to use. This is because it contains many problematic design details that pose a risk to usability. Perhaps you can already spot a few?</p>
+<p>我們使用以下的邏輯規則或指南，一次解決原始設計的一個問題：</p>
+<p>Let’s fix the problems with the original design one at a time using the following logical rules or guidelines:</p>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E7%A9%BA%E9%96%93%E5%B0%87%E7%9B%B8%E9%97%9C%E5%85%83%E7%B4%A0%E5%88%86%E7%B5%84-use-space-to-group-related-elements">使用空間將相關元素分組 Use space to group related elements</a></li>
+<li><a href="#%E4%BF%9D%E6%8C%81%E4%B8%80%E8%87%B4%E6%80%A7-be-consistent">保持一致性 Be consistent</a></li>
+<li><a href="#%E7%A2%BA%E4%BF%9D%E7%9C%8B%E8%B5%B7%E4%BE%86%E7%9B%B8%E4%BC%BC%E7%9A%84%E5%85%83%E7%B4%A0%E5%8A%9F%E8%83%BD%E7%9B%B8%E4%BC%BC-ensure-similar-looking-elements-function-similarly">確保看起來相似的元素功能相似 Ensure similar looking elements function similarly</a></li>
+<li><a href="#%E5%89%B5%E5%BB%BA%E6%B8%85%E6%99%B0%E7%9A%84%E8%A6%96%E8%A6%BA%E5%B1%A4%E6%AC%A1-create-a-clear-visual-hierarchy">創建清晰的視覺層次 Create a clear visual hierarchy</a></li>
+<li><a href="#%E7%A7%BB%E9%99%A4%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E6%A8%A3%E5%BC%8F-remove-unnecessary-styles">移除不必要的樣式 Remove unnecessary styles</a></li>
+<li><a href="#%E6%9C%89%E7%9B%AE%E7%9A%84%E5%9C%B0%E4%BD%BF%E7%94%A8%E9%A1%8F%E8%89%B2-use-colour-purposefully">有目的地使用顏色 Use colour purposefully</a></li>
+<li><a href="#%E7%A2%BA%E4%BF%9D%E4%BB%8B%E9%9D%A2%E5%85%83%E7%B4%A0%E6%9C%8931%E7%9A%84%E5%B0%8D%E6%AF%94%E5%BA%A6%E6%AF%94%E4%BE%8B-ensure-interface-elements-have-a-31-contrast-ratio">確保介面元素有3：1的對比度比例 Ensure interface elements have a 3:1 contrast ratio</a></li>
+<li><a href="#%E7%A2%BA%E4%BF%9D%E6%96%87%E6%9C%AC%E6%9C%89451%E7%9A%84%E5%B0%8D%E6%AF%94%E5%BA%A6%E6%AF%94%E4%BE%8B-ensure-text-has-a-451-contrast-ratio">確保文本有4.5：1的對比度比例 Ensure text has a 4.5:1 contrast ratio</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E5%83%85%E4%BE%9D%E8%B3%B4%E9%A1%8F%E8%89%B2%E4%BD%9C%E7%82%BA%E6%8C%87%E7%A4%BA%E5%99%A8-dont-rely-on-colour-alone-as-an-indicator">不要僅依賴顏色作為指示器 Don’t rely on colour alone as an indicator</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%96%AE%E4%B8%80%E7%9A%84%E7%84%A1%E8%A5%AF%E7%B7%9A%E5%AD%97%E9%AB%94-use-a-single-sans-serif-typeface">使用單一的無襯線字體 Use a single sans serif typeface</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%85%B7%E6%9C%89%E8%BC%83%E9%AB%98%E5%B0%8F%E5%AF%AB%E5%AD%97%E6%AF%8D%E7%9A%84%E5%AD%97%E9%AB%94-use-a-typeface-with-taller-lower-case-letters">使用具有較高小寫字母的字體 Use a typeface with taller lower case letters</a></li>
+<li><a href="#%E9%99%90%E5%88%B6%E5%A4%A7%E5%AF%AB%E5%AD%97%E6%AF%8D%E7%9A%84%E4%BD%BF%E7%94%A8-limit-the-use-of-uppercase">限制大寫字母的使用 Limit the use of uppercase</a></li>
+<li><a href="#%E5%8F%AA%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A6%8F%E5%92%8C%E7%B2%97%E9%AB%94%E5%AD%97%E9%87%8D-use-regular-and-bold-font-weights-only">只使用常規和粗體字重 Use regular and bold font weights only</a></li>
+<li><a href="#%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E7%B4%94%E9%BB%91%E8%89%B2%E6%96%87%E6%9C%AC-avoid-pure-black-text">避免使用純黑色文本 Avoid pure black text</a></li>
+<li><a href="#%E5%B7%A6%E5%B0%8D%E9%BD%8A%E6%96%87%E6%9C%AC-left-align-text">左對齊文本 Left align text</a></li>
+<li><a href="#%E6%AD%A3%E6%96%87%E6%96%87%E6%9C%AC%E7%9A%84%E8%A1%8C%E9%AB%98%E6%87%89%E8%87%B3%E5%B0%91%E7%82%BA15%E5%80%8D-use-at-least-15-line-height-for-body-text">正文文本的行高應至少為1.5倍 Use at least 1.5 line height for body text</a></li>
+</ul>
+<h2 id="使用空間將相關元素分組-Use-space-to-group-related-elements"><a href="#使用空間將相關元素分組-Use-space-to-group-related-elements" class="headerlink" title="使用空間將相關元素分組 Use space to group related elements"></a>使用空間將相關元素分組 Use space to group related elements</h2><p>將資訊分解為相關元素的小組可以幫助結構化和組織介面，這讓人們更快、更容易地理解和記憶。</p>
+<p>Breaking up information into smaller groups of related elements helps to structure and organise an interface. This makes it faster and easier for people to understand and remember.</p>
+<p>你可以通過以下方法將相關元素分組：</p>
+<p>You can group related elements using the following methods:</p>
+<ol>
+<li>將相關元素放在同一個容器中 Place related elements in the same container</li>
+<li>將相關元素空間上靠近 Space related elements close together</li>
+<li>使相關元素看起來相似 Make related elements look similar</li>
+<li>在一條連續線上對齊相關元素 Align related elements in a continuous line</li>
+</ol>
+<p>使用容器是將介面元素分組的最強烈的視覺提示，但它可能會增加不必要的混亂。 尋找使用其他分組方法的機會，它們通常更加微妙，可以幫助簡化設計。</p>
+<p>Using containers is the strongest visual cue to group interface elements, but it can add unnecessary clutter. Look for opportunities to use other grouping methods, they’re often more subtle and can help simplify designs.</p>
+<p>特別是使用空間，是將相關元素分組的一種非常有效且簡單的方式。 你還可以結合分組方法，以更清楚地展示分組。</p>
+<p>Using space in particular is a very effective and simple way to group related elements. You can also combine grouping methods to help display groupings more clearly.</p>
+<p>在我們的例子中，內容之間缺乏空間使得設計看起來混亂且難以理解。 增加間距有助於清晰地將內容分組，使其更有組織性，更容易理解。</p>
+<p>In our example, the lack of space between content makes the design look cluttered and difficult to understand. Increasing spacing helps to clearly group content, making it more organised and easier to understand.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/5tg2SZ8.png" class="" title="label">
+
+<h2 id="保持一致性-Be-consistent"><a href="#保持一致性-Be-consistent" class="headerlink" title="保持一致性 Be consistent"></a>保持一致性 Be consistent</h2><p>在UI設計中，一致性意味著相似的元素看起來並且工作方式相似。 無論是在你的產品內部，還是與其他已經建立良好的產品相比，都應該如此。 這種可預見的功能性能提高可用性並減少錯誤，因為人們不需要不斷地學習事物的工作原理。</p>
+<p>Consistency in UI design means that similar elements look and work in a similar way. This should be true both within your product and when compared with other well-established products. This predictable functionality improves usability and reduces errors, as people don’t need to keep learning how things work.</p>
+<p>在我們的例子中，圖標的樣式並不一致，有些是填充的，有些則不是。 這可能會使一些人感到困惑，因為填充的圖示通常表示一個元素被選中了。 用2pt的筆觸寬度和圓角勾勒出所有圖示可以提高一致性，並賦予每個圖示相似的視覺重量。</p>
+<p>In our example, the icon styles are inconsistent, as some are filled and others aren’t. This could confuse some people, as filled icons often indicate that an element is selected. Outlining all icons with a 2pt stroke weight and rounded corners improves consistency and gives each icon a similar visual weight.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/Oa61w7e.png" class="" title="label">
+
+<p>圖示上也添加了文字標籤，以幫助確保人們可以理解它們的含義，特別是那些使用螢幕閱讀器的人（螢幕閱讀器是一種用語音或盲文描述介面的軟體，供視力障礙者使用）。</p>
+<p>Text labels are also added to the icons to help ensure people can understand what they mean, especially those using screen readers (software that describes an interface, using speech or braille, to someone who can’t see it).</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/1H24m5r.png" class="" title="label">
+
+<h2 id="確保看起來相似的元素功能相似-Ensure-similar-looking-elements-function-similarly"><a href="#確保看起來相似的元素功能相似-Ensure-similar-looking-elements-function-similarly" class="headerlink" title="確保看起來相似的元素功能相似 Ensure similar looking elements function similarly"></a>確保看起來相似的元素功能相似 Ensure similar looking elements function similarly</h2><p>如果元素看起來相似，人們會期望它們以相似的方式工作。 所以，請盡量確保你對具有相同功能的元素使用一致的視覺處理。 反之，嘗試確保具有不同功能的元素看起來不同。</p>
+<p>If elements look similar, people will expect them to work in a similar way. So try to ensure that you use a consistent visual treatment for elements with the same functionality. Conversely, try to ensure elements with different functionality look different.</p>
+<p>在我們的例子中，圖示容器的視覺樣式與「立即預訂」按鈕相似。 這使它們看起來像是可以交互的，儘管它們並非如此。 拿掉圖示的藍色和按鈕樣式有助於避免它們被誤認為是可以交互的元素。</p>
+<p>In our example, the icon containers have a similar visual style to the “book now” button. This makes them seem interactive, even though they’re not. Removing the blue colour and button styling from the icons helps to avoid them being mistaken for interactive elements.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/25AINm0.png" class="" title="label">
+
+<h2 id="創建清晰的視覺層次-Create-a-clear-visual-hierarchy"><a href="#創建清晰的視覺層次-Create-a-clear-visual-hierarchy" class="headerlink" title="創建清晰的視覺層次 Create a clear visual hierarchy"></a>創建清晰的視覺層次 Create a clear visual hierarchy</h2><p>介面中的所有信息並非都有相同的重要性。 你的目標應該是按照重要性的順序展示資訊，使更重要的元素顯得更突出。</p>
+<p>Not all information in an interface has the same level of importance. Aim to present information in order of importance by making more important elements look more prominent.</p>
+<p>清晰的重要性順序，或者說視覺層次，有助於人們快速掃描信息並關注感興趣的區域。 它也通過創造一種秩序感來提升美感。 你可以使用大小、顏色、對比度、間距、位置和深度的變化來創建清晰的視覺層次。</p>
+<p>A clear order of importance, or visual hierarchy, helps people scan information quickly and focus on areas of interest. It also improves aesthetics by creating a sense of order. You can create a clear visual hierarchy using variations in size, colour, contrast, spacing, position, and depth.</p>
+<p>以下是一個沒有明確視覺層次的網站英雄橫幅示例，後面是一個按重要性順序明確展示元素的示例。</p>
+<p>Here’s an example of a website hero banner without a clear visual hierarchy, followed by one with elements clearly presented in order of importance.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/5BH1Z8z.png" class="" title="label">
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/aX80M7c.png" class="" title="label">
+
+<p>一個快速簡便的檢測你的視覺層次是否清晰的方法是使用「模糊測試」。 只需眯起你的眼睛看你的設計，或者你可以離屏幕遠一些，或模糊你的設計。 你應該仍然能夠識別出哪些是最重要的元素，並且能夠識別出界面的用途。</p>
+<p>A quick and easy way to test whether your visual hierarchy is clear is to use The Squint Test. Simply squint your eyes and look at your design. Alternatively you can move further away from the screen or blur your design. You should still be able to tell what the most important elements are and recognise what the interface is for.</p>
+<p>讓我們把模糊測試應用到我們的例子上。 我們可以看到有多個元素的突出程度相當，競相吸引注意力。 與此同時，左下角的主要動作一點也不突出。</p>
+<p>Let’s apply the Squint Test to our example. We can see that there are multiple elements with similarly strong prominence competing for attention. Meanwhile, the primary action in the bottom left doesn’t stand out at all.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/6c5URN3.png" class="" title="label">
+
+<p>通常情況下，主要動作應該是介面上最突出的元素。 給它一個高對比度的背景顏色和粗體字重可以幫助實現這一點。 這也修復了一個關於低對比度按鈕的可訪問性問題，我們稍後會深入研究這個問題。</p>
+<p>The primary action should generally be the most prominent element on an interface. Giving it a high contrast background colour and bold font weight helps achieve this. This also fixes an accessibility issue with the low contrast button, which we’ll look into later.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/07j8F3i.png" class="" title="label">
+
+<p>將模糊測試應用到更新的設計上，主要動作顯然是最突出的元素。</p>
+<p>Applying the Squint Test to the updated design, the primary action is clearly the most prominent element.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/7Nx706F.png" class="" title="label">
+
+<p>視覺層次現在更清晰了，但還有改進的空間。 例如，與其重要性相比，正文文本塊的突出程度仍然過高。 我們稍後將學習一些快速的排版指南，這將有助於修正視覺層次。</p>
+<p>The visual hierarchy is now clearer, but there’s still room for improvement. For example, the block of body text is still too prominent relative to its level of importance. We’ll learn some quick typography guidelines shortly, which will help correct the visual hierarchy.</p>
+<h2 id="移除不必要的樣式-Remove-unnecessary-styles"><a href="#移除不必要的樣式-Remove-unnecessary-styles" class="headerlink" title="移除不必要的樣式 Remove unnecessary styles"></a>移除不必要的樣式 Remove unnecessary styles</h2><p>不必要的資訊和視覺樣式可能會分散注意力，增加認知負荷（使用介面所需的腦力）。 避免不必要的線條、顏色、背景和動畫，可以創建一個更簡潔、更聚焦的介面。</p>
+<p>Unnecessary information and visual styles can be distracting and can increase cognitive load (the amount of brain power required to use an interface). Avoid unnecessary lines, colours, backgrounds, and animations to create a simpler, more focused interface.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/31VzA6B.png" class="" title="label">
+
+<p>在我們的例子中，圖片周圍的白色空間和邊框增加了不必要的視覺複雜性。 它們並不需要傳達資訊或分組元素，所以我們可以安全地移除它們，以簡化設計。</p>
+<p>In our example, the white space and borders around the image add unnecessary visual complexity. They’re not needed to convey information or group elements, so we can safely remove them to simplify the design.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/84zJ8jV.png" class="" title="label">
+
+<h2 id="有目的地使用顏色-Use-colour-purposefully"><a href="#有目的地使用顏色-Use-colour-purposefully" class="headerlink" title="有目的地使用顏色 Use colour purposefully"></a>有目的地使用顏色 Use colour purposefully</h2><p>有節制且有目的地使用顏色。 盡量避免純粹為了裝飾而使用顏色，因為它可能會引起混淆和分心。 從黑白開始，當它能傳達意義時再引入顏色。</p>
+<p>Use colour sparingly and with purpose. Try to avoid using colour purely for decoration, as it can be confusing and distracting. Start with black and white and introduce colour where it conveys meaning.</p>
+<p>一個簡單有效的方法是將品牌顏色應用於文本連結和按鈕等交互元素。 這有助於讓人們瞭解哪些是可交互的，哪些不是。 盡量避免在非交互元素上使用品牌顏色。</p>
+<p>A simple and effective approach is to apply the brand colour to interactive elements like text links and buttons. This helps teach people what’s interactive and what’s not. Try to avoid using the brand colour on non-interactive elements.</p>
+<p>你不需要給所有交互元素添加顏色，因為有些元素已經有了表示它們可交互的視覺線索。 例如，下面示例中的卡片，無論有無藍色連結，都給人一種可以交互的感覺。</p>
+<p>You don’t need to add colour to all interactive elements, as some already have visual cues that indicate they’re interactive. For example, the cards in the following example still feel interactive, with or without the blue coloured link.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/AL2C67e.png" class="" title="label">
+
+<p>在我們的原始示例中，藍色的標題可能看起來很好，但它使文本看起來像是可以交互的。 為了避免混淆，我們將非交互性標題的藍色移除。</p>
+<p>In our original example, the blue heading might look nice, but it makes the text seem interactive. To help avoid confusion, we remove the blue colour from the heading as it’s not interactive.</p>
+<p>我們還從其他非交互元素，如星級評價中移除藍色。 這樣就更容易看出什麼是可交互的，什麼不是。</p>
+<p>We also remove the blue colour from other non-interactive elements like the star rating. This makes it much easier to see what’s interactive and what’s not.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/8mr63xn.png" class="" title="label">
+
+<h2 id="確保介面元素有3：1的對比度比例-Ensure-interface-elements-have-a-3-1-contrast-ratio"><a href="#確保介面元素有3：1的對比度比例-Ensure-interface-elements-have-a-3-1-contrast-ratio" class="headerlink" title="確保介面元素有3：1的對比度比例 Ensure interface elements have a 3:1 contrast ratio"></a>確保介面元素有3：1的對比度比例 Ensure interface elements have a 3:1 contrast ratio</h2><p>對比度是兩種顏色之間的感知亮度差異的衡量。 它以從<code>1:1</code>到<code>21:1</code>的比率來表示。 例如，黑色背景上的黑色文本有最低的1：1對比度比例，而白色背景上的黑色文本有最高的<code>21:1</code>比例。 有許多<a target="_blank" rel="noopener" href="https://usecontrast.com/">線上工具</a>可以幫助你測量不同顏色之間的對比度比例。</p>
+<p>Contrast is a measure of the difference in perceived brightness between two colours. It’s expressed as a ratio ranging from 1:1 to 21:1. For example, black text on a black background has the lowest 1:1 contrast ratio, whereas black text on a white background has the highest 21:1 ratio. There are many <a target="_blank" rel="noopener" href="https://usecontrast.com/">online tools</a> to help you measure contrast ratios between different colours.</p>
+<blockquote>
+<p>此線上工具為Figma插件，需要在Figma中使用，下面列出其他線上工具：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://webaim.org/resources/contrastchecker/">WebAIM</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexnaw.com/">Hex Naw</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.weiyuan.com.tw/contrast_ratio">Contrast Ratio</a></li>
+<li><a target="_blank" rel="noopener" href="https://colorable.jxnblk.com/">Colorable</a></li>
+</ol>
+</blockquote>
+<p>為了確保視力受損的人能清晰地看到介面細節，應至少滿足<a target="_blank" rel="noopener" href="https://www.w3.org/TR/WCAG21/#non-text-contrast">網頁內容可訪問性指南（WCAG）2.1</a>  AA級色彩對比度要求。 這意味著使用者介面元素，如表單字段和按鈕，需要有至少<code>3：1</code>的對比度比例。</p>
+<p>In order to help ensure people with vision impairments can clearly see interface details, aim to at least meet <a target="_blank" rel="noopener" href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a> level AA colour contrast requirements. This means user interface elements, like form fields and buttons, need to have at least a <code>3:1</code> contrast ratio.</p>
+<p>在我們的例子中，箭頭圖標的對比度太低。 在圖示上加上陰影，並在圖像的上方第三部分上添加漸變疊加層，可以使圖示獲得足夠的<code>3：1</code>對比度，無論它處於什麼樣的圖像上。</p>
+<p>In our example, the arrow icon contrast is too low. Adding a shadow to the icon and a gradient overlay on the top third of the image gives the icon sufficient <code>3:1</code> contrast, regardless of the image it sits on.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/q8uWj9U.png" class="" title="label">
+
+<p>原始範例中的主按鈕對比度也過低。 我們在之前解決視覺層次問題時已經修復了它，但在這裡也值得一提。</p>
+<p>The primary button contrast in the original example was also too low. We fixed it previously when addressing the visual hierarchy, but it’s also worth mentioning here.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/R2rMV83.png" class="" title="label">
+
+<p>低對比度按鈕的風險在於，低視力的人可能無法識別它是一個按鈕，因為他們看不見按鈕的形狀。 將按鈕的對比度比率提高到<code>3:1</code>以上，使按鈕具有可訪問性，同時也有助於修正視覺層次。</p>
+<p>The risk with the low contrast button is that people with low vision might not identify it as a button, as they can’t see the button shape. Increasing the button contrast ratio above <code>3:1</code> makes the button accessible and also helps correct the visual hierarchy.</p>
+<p>將箭頭和按鈕的對比度提高到<code>3:1</code>以上，我們得到了以下設計。 我們正在一點一點地接近目標，但還有更多問題需要解決。</p>
+<p>Increasing the arrow and button contrast to a ratio above <code>3:1</code> gives us the following design. We’re getting there bit by bit, but we’ve still got more issues to fix.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/dFcAWGq.png" class="" title="label">
+
+<h2 id="確保文本有4-5：1的對比度比例-Ensure-text-has-a-4-5-1-contrast-ratio"><a href="#確保文本有4-5：1的對比度比例-Ensure-text-has-a-4-5-1-contrast-ratio" class="headerlink" title="確保文本有4.5：1的對比度比例 Ensure text has a 4.5:1 contrast ratio"></a>確保文本有4.5：1的對比度比例 Ensure text has a 4.5:1 contrast ratio</h2><p>為了確保視力受損的人能清楚地閱讀文本，需要滿足以下<a target="_blank" rel="noopener" href="https://www.w3.org/TR/WCAG21/#contrast-minimum">WCAG 2.1</a> AA級對比度要求：</p>
+<p>In order to help ensure people with vision impairments can clearly read text, it needs to meet the following WCAG 2.1 level AA contrast requirements:</p>
+<ol>
+<li>小文本（18px及以下）需要最小<code>4.5：1</code>的對比度。 Small text (18px and under) needs a minimum contrast of <code>4.5:1</code>.</li>
+<li>大文本（以上粗體18px或以上常規體24px）需要最小<code>3：1</code>的對比度。 Large text (above 18px with bold weight or above 24px with regular weight) needs a minimum contrast of <code>3:1</code>.</li>
+</ol>
+<p>在我們的例子中，照片數量元素中的小文本對比度不足。 我們通過增加灰色容器的不透明度並添加文本陰影，將對比度比率提高到<code>4.5：1</code>以上。</p>
+<p>In our example, the small text in the photo count element has insufficient contrast. We increase the contrast ratio above <code>4.5:1</code> by increasing the opacity of the grey container and also adding a text shadow.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/IwXfMLV.png" class="" title="label">
+
+<p>位置文本的對比度也太低。 細的字體權重使其更難閱讀。 使用更深的灰色有助於使文本更易於訪問。 我們稍後將對文本進行進一步的更新，以提高其品質。</p>
+<p>The contrast of the location text is also too low. The thin font weight makes it even harder to read. Using a darker shade of grey helps make the text more accessible. We’ll make further updates to the text to improve it shortly.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/Mby7TA5.png" class="" title="label">
+
+<h2 id="不要僅依賴顏色作為指示器-Don’t-rely-on-colour-alone-as-an-indicator"><a href="#不要僅依賴顏色作為指示器-Don’t-rely-on-colour-alone-as-an-indicator" class="headerlink" title="不要僅依賴顏色作為指示器 Don’t rely on colour alone as an indicator"></a>不要僅依賴顏色作為指示器 Don’t rely on colour alone as an indicator</h2><p>有許多不同類型的色盲，主要影響男性。 通常，色盲的人在區分紅色和綠色方面有困難，但有些人根本無法看到任何顏色。</p>
+<p>There are many different types of colour blindness and they mainly affect men. Commonly, people who are colour blind have difficulty distinguishing between red and green, but some aren’t able to see any colour at all.</p>
+<p>為了確保界面對色盲者可訪問，你不能僅依賴顏色來傳達意義或區分視覺元素。 你需要使用額外的視覺線索來區分介面元素。</p>
+<p>To ensure an interface is accessible to those who are colour blind, you can’t rely on colour alone to convey meaning or distinguish visual elements. You need to use additional visual cues to differentiate interface elements.</p>
+<p>在我們的示例中，藍色用於“評論”文本，以表示它是一個連結。如果移除顏色，連結文本看起來和其他文本一樣，所以色盲者無法識別它是一個連結。 在缺少顏色的情況下，給連結文本加上下劃線，清晰地區分出它和其他文本的差異。</p>
+<p>In our example, the colour blue is used on the “reviews” text to indicate that it’s a link. If colour is removed, the link text looks the same as other text, so the colour blind can’t tell it’s a link. Underlining the link text clearly differentiates it from other text in the absence of colour.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/pjKQDHv.png" class="" title="label">
+
+<h2 id="使用單一的無襯線字體-Use-a-single-sans-serif-typeface"><a href="#使用單一的無襯線字體-Use-a-single-sans-serif-typeface" class="headerlink" title="使用單一的無襯線字體 Use a single sans serif typeface"></a>使用單一的無襯線字體 Use a single sans serif typeface</h2><p>字體是一組具有相似風格或美學的相關字體。 Helvetica就是一個字體的例子。 字體是字體中的變化，如權重或大小。 例如，Helvetica粗體和Helvetica常規體是Helvetica字體內的兩種不同字體。</p>
+<p>A typeface is a set of related fonts with a similar style or aesthetic. Helvetica is an example of a typeface. Fonts are variations within a typeface, like weights or sizes. For example, Helvetica bold and Helvetica regular are 2 different fonts within the Helvetica typeface.</p>
+<p>在介面設計中，使用單一的無襯線字體是最安全的，因為它們通常最具可讀性，中性，並且簡潔。</p>
+<p>It’s safest to use a single sans serif typeface for interface design, as they’re generally the most legible, neutral, and simple.</p>
+<p>在我們的示例中，標題使用了一個詳細的有襯線字體，這有點難以閱讀，對一些人可能會分散注意力。 它還具有可能與這個短租物業應用中的一些照片不匹配的個性。 使用無襯線字體進行簡化可以説明提高可用性和美學。</p>
+<p>In our example, the heading uses a detailed serif typeface that’s a bit difficult to read and could be distracting to some. It also has a personality that might not match some of the photos in this property rental app. Simplifying it using a sans serif typeface can help improve usability and aesthetics.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/Smmnd3s.png" class="" title="label">
+
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/p9eMun4.png" class="" title="label">
+
+<h2 id="使用具有較高小寫字母的字體-Use-a-typeface-with-taller-lower-case-letters"><a href="#使用具有較高小寫字母的字體-Use-a-typeface-with-taller-lower-case-letters" class="headerlink" title="使用具有較高小寫字母的字體 Use a typeface with taller lower case letters"></a>使用具有較高小寫字母的字體 Use a typeface with taller lower case letters</h2><p>尋找具有較高小寫字母和更大字母間距的字體，因為它們通常在小尺寸下更易讀。 字型中小寫字母的高度被稱為<code>x-height</code>。</p>
+<p>Look for typefaces with taller lower case letters and greater letter spacing, as they’re generally more legible at small sizes. The height of lowercase letters in a typeface is known as the x-height.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/aVNVbC4.png" class="" title="label">
+
+<p>我們的示例使用的是Gill Sans字體，這個字體x-height相對較低。 將字體更改為x-height， 更大的字體，如 Lato，有助於提高可讀性。</p>
+<p>Our example uses the Gill Sans typeface, which has a relatively low x-height. Changing the typeface to one with a larger x-height, like Lato, helps to improve readability.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/cgIxPcN.png" class="" title="label">
+
+<p>這是將我們的示例中的字體從Gill Sans更改為Lato後的效果。</p>
+<p>Here’s what our example looks like after the typeface is updated from Gill Sans to Lato.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/7sdh3SX.png" class="" title="label">
+
+<h2 id="限制大寫字母的使用-Limit-the-use-of-uppercase"><a href="#限制大寫字母的使用-Limit-the-use-of-uppercase" class="headerlink" title="限制大寫字母的使用 Limit the use of uppercase"></a>限制大寫字母的使用 Limit the use of uppercase</h2><p>除非你在向人們大聲喊叫，否則沒有多少有效的理由使用大寫字母。 因為大寫字母顯得很吵鬧，並且閱讀起來困難。</p>
+<p>Unless you’re shouting at people, there aren’t many valid reasons to use uppercase. IT’S LOUD AND DIFFICULT TO READ.</p>
+<p>當你閱讀時，你看的是單詞的形狀，而不是每個字母。 這種形狀説明你更快地識別單詞。 然而，全部大寫的單詞都有相同的矩形形狀，這迫使你逐個閱讀每個字母。</p>
+<p>When you read, you look at the shape of a word, rather than looking at each letter. The shape helps you recognise the word more quickly. Uppercase words all have the same rectangular shape. This forces you to read each letter one by one.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/vYwbfNH.png" class="" title="label">
+
+<p>在我們的範例中，位置文本使用了大寫字母。 將其改為句首大寫的句子格式，即只有第一個單詞和專有名詞（人名、地名或事物名稱）首字母大寫，有助於提高可讀性。</p>
+<p>In our example, the location text uses uppercase. Changing it to sentence case, where only the first word and proper nouns (names of people, places or things) are capitalised, helps to improve readability.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/ScfACWv.png" class="" title="label">
+
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/k2KmkcH.png" class="" title="label">
+
+<h2 id="只使用常規和粗體字重-Use-regular-and-bold-font-weights-only"><a href="#只使用常規和粗體字重-Use-regular-and-bold-font-weights-only" class="headerlink" title="只使用常規和粗體字重 Use regular and bold font weights only"></a>只使用常規和粗體字重 Use regular and bold font weights only</h2><p>僅僅因為一個字體家族提供了多種字重，並不意味著你需要在設計中使用所有這些字重。 過多地使用不同的字重會給介面增加噪音和雜亂感。 這也會使得保持字重的一致性變得更加困難。</p>
+<p>Just because there are lots of font weights available in a typeface, doesn’t mean you need to use all of them in your designs. Using lots of different font weights can add noise and clutter to your interface. It also makes it more difficult to use each font weight consistently.</p>
+<p>通過僅使用常規和粗體字重，使你的設計系統簡潔明瞭。</p>
+<p>Keep your design system simple and concise by using regular and bold font weights only.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/QdnRzuv.png" class="" title="label">
+
+<p>快速使用提示：</p>
+<p>Quick usage tips:</p>
+<ol>
+<li>使用粗體字重來強調標題。 Use bold font weight for headings to emphasise them.</li>
+<li>使用常規字重來呈現其他較小的文字。 Use regular font weight for other smaller text.</li>
+<li>如果你決定使用非常細或非常粗的字重，請將其保留給標題和較大的文本，因為在較小的尺寸上閱讀可能會困難。 If you decide to use very thin or thick font weights, reserve them for headings and larger text, as they can be difficult to read at smaller sizes.</li>
+</ol>
+<p>在我們的例子中，位置文本使用了較輕的字重。 即使我們將對比度提高到了超過所需的<code>4.5：1</code>的對比度比例，細小的字元仍然可能對一些人來說難以閱讀。 將字重增加到常規字重有助於提高可讀性並簡化設計。</p>
+<p>In our example, the location text uses a light font weight. Even though we’ve increased the contrast above the required <code>4.5:1</code> contrast ratio, the thin characters could still be difficult for some people to read. Increasing the font weight to regular helps improve readability and simplifies the design.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/EFuWg5M.png" class="" title="label">
+
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/4jZkFtq.png" class="" title="label">
+
+<h2 id="避免使用純黑色文本-Avoid-pure-black-text"><a href="#避免使用純黑色文本-Avoid-pure-black-text" class="headerlink" title="避免使用純黑色文本 Avoid pure black text"></a>避免使用純黑色文本 Avoid pure black text</h2><p>在UI設計中，通常最好避免使用純黑色，因為它與白色之間具有非常高的對比度。 這種高對比度可能導致閱讀文本時眼睛疲勞和不適。</p>
+<p>For UI design, it’s generally safest to avoid pure black, as it has a very high contrast against white. This high contrast can cause eye strain and fatigue when reading text.</p>
+<p>黑色的顏色亮度為0%，而白色的顏色亮度為100%。 顏色亮度的巨大差異使得我們的眼睛工作更加艱難。 在白色背景下，避免使用純黑色是最安全的選擇，可以選擇使用深灰色。</p>
+<p>Black has 0% colour brightness and white has 100% colour brightness. The large difference in colour brightness causes our eyes to work harder. It’s safest to avoid pure black against white and opt for a dark grey instead.</p>
+<p>在我們的例子中，純黑色在多個元素上使用。 將其改為深灰色有助於提高可讀性。 在之前的視覺層次中，我們注意到屬性描述文本過於突出。 為了確保介面元素按重要性的順序呈現，我們使用較淺的灰色來降低屬性描述文本的突出性。</p>
+<p>In our example, pure black is used on multiple elements. Changing it to a dark grey helps to improve readability. Previously when looking at visual hierarchy, we noted that the property description text was too prominent. To make sure interface elements are presented in order of importance, we use a lighter grey for the property description text to decrease its prominence.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/bQWvEeG.png" class="" title="label">
+
+<h2 id="左對齊文本-Left-align-text"><a href="#左對齊文本-Left-align-text" class="headerlink" title="左對齊文本 Left align text"></a>左對齊文本 Left align text</h2><p>英語從左到右閱讀，向下以F形的模式。 因此，為了最佳可讀性，最好保持文本左對齊。 對於較長的正文文本，最好避免居中對齊或兩端對齊的文本。 這種對齊方式更難閱讀，尤其對於認知障礙的人來說。</p>
+<p>English is read from left to right, downwards in an F-shaped pattern. So it’s best to keep text left aligned for optimal readability. For long body text, it’s safest to avoid centre aligned or justified text. It’s more difficult to read, especially for those with cognitive disabilities.</p>
+<p>居中對齊適用於標題和短文本，因為可以快速閱讀。 然而，居中對齊會使較長的正文文本更難閱讀，因為每行的起始點不斷變化。 你的眼睛需要更努力地找到每行的起始點。</p>
+<p>Centre alignment can work for headings and short text, as it can be quickly read. However, centre alignment makes longer body text harder to read, because the starting point of each line constantly changes. Your eyes need to work harder to find the starting point of each line.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/2NZj4Ez.png" class="" title="label">
+
+<p>在我們的例子中，屬性描述文本採用了居中對齊。 將文本左對齊可以提高可讀性，並且與上方左對齊的文本保持一致。</p>
+<p>In our example, the property description text is centre aligned. Left aligning the text improves readability and is also consistent with the left aligned text above.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/tnYMTtq.png" class="" title="label">
+
+<h2 id="正文文本的行高應至少為1-5倍-Use-at-least-1-5-line-height-for-body-text"><a href="#正文文本的行高應至少為1-5倍-Use-at-least-1-5-line-height-for-body-text" class="headerlink" title="正文文本的行高應至少為1.5倍 Use at least 1.5 line height for body text"></a>正文文本的行高應至少為1.5倍 Use at least 1.5 line height for body text</h2><p>行高是兩行文本之間的垂直距離。 行與行之間的間距有助於避免人們重讀同一行文本。 它也使閱讀更加舒適和輕鬆。</p>
+<p>Line height is the vertical distance between two lines of text. The space between lines helps prevent people from rereading the same line of text. It also looks and feels more comfortable to read.</p>
+<p>為了可訪問性和可讀性，特別是對於較長的正文文本，請確保行高至少為1.5倍（150%）。 將行高保持在1.5至2之間通常效果良好。</p>
+<p>For accessibility and readability, especially for long body text, ensure that line height is at least 1.5 (150%). Keeping line height between 1.5 and 2 generally works well.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/gwQzV4J.png" class="" title="label">
+
+<p>在我們的例子中，行高僅為1（100%）。 將行高增加到1.6（160%）有助於提高可讀性。</p>
+<p>In our example, the line height is only 1 (100%). Increasing it to 1.6 (160%) helps to improve readability.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/gsEZnu6.png" class="" title="label">
+
+<h2>修復上面的原始圖 We fixed it!</h2>
+
+<p>通過一些簡單而強大的UI設計指南，我們快速找到並修復了我們示例設計中的許多問題。</p>
+<p>With a handful of simple but powerful UI design guidelines, we quickly found and fixed a whole bunch of problems with our example design.</p>
+<img src="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/zw4zWTg.png" class="" title="label">
+
+<p>參考資料：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.adhamdannaway.com/blog/ui-design/16-ui-design-rules">16 little UI design rules that make a big impact</a></li>
+</ul>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/UI-UX/">UI/UX</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/07/17/create-sample-todolist-use-angular/" title="使用Angular建立一個簡單的任務管理器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">使用Angular建立一個簡單的任務管理器</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Souts JJW</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">使用邏輯規則來修復這個例子 Let’s fix this example using logical rules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%A9%BA%E9%96%93%E5%B0%87%E7%9B%B8%E9%97%9C%E5%85%83%E7%B4%A0%E5%88%86%E7%B5%84-Use-space-to-group-related-elements"><span class="toc-number">2.</span> <span class="toc-text">使用空間將相關元素分組 Use space to group related elements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E6%8C%81%E4%B8%80%E8%87%B4%E6%80%A7-Be-consistent"><span class="toc-number">3.</span> <span class="toc-text">保持一致性 Be consistent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A2%BA%E4%BF%9D%E7%9C%8B%E8%B5%B7%E4%BE%86%E7%9B%B8%E4%BC%BC%E7%9A%84%E5%85%83%E7%B4%A0%E5%8A%9F%E8%83%BD%E7%9B%B8%E4%BC%BC-Ensure-similar-looking-elements-function-similarly"><span class="toc-number">4.</span> <span class="toc-text">確保看起來相似的元素功能相似 Ensure similar looking elements function similarly</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%B5%E5%BB%BA%E6%B8%85%E6%99%B0%E7%9A%84%E8%A6%96%E8%A6%BA%E5%B1%A4%E6%AC%A1-Create-a-clear-visual-hierarchy"><span class="toc-number">5.</span> <span class="toc-text">創建清晰的視覺層次 Create a clear visual hierarchy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E6%A8%A3%E5%BC%8F-Remove-unnecessary-styles"><span class="toc-number">6.</span> <span class="toc-text">移除不必要的樣式 Remove unnecessary styles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%9B%AE%E7%9A%84%E5%9C%B0%E4%BD%BF%E7%94%A8%E9%A1%8F%E8%89%B2-Use-colour-purposefully"><span class="toc-number">7.</span> <span class="toc-text">有目的地使用顏色 Use colour purposefully</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A2%BA%E4%BF%9D%E4%BB%8B%E9%9D%A2%E5%85%83%E7%B4%A0%E6%9C%893%EF%BC%9A1%E7%9A%84%E5%B0%8D%E6%AF%94%E5%BA%A6%E6%AF%94%E4%BE%8B-Ensure-interface-elements-have-a-3-1-contrast-ratio"><span class="toc-number">8.</span> <span class="toc-text">確保介面元素有3：1的對比度比例 Ensure interface elements have a 3:1 contrast ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A2%BA%E4%BF%9D%E6%96%87%E6%9C%AC%E6%9C%894-5%EF%BC%9A1%E7%9A%84%E5%B0%8D%E6%AF%94%E5%BA%A6%E6%AF%94%E4%BE%8B-Ensure-text-has-a-4-5-1-contrast-ratio"><span class="toc-number">9.</span> <span class="toc-text">確保文本有4.5：1的對比度比例 Ensure text has a 4.5:1 contrast ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E8%A6%81%E5%83%85%E4%BE%9D%E8%B3%B4%E9%A1%8F%E8%89%B2%E4%BD%9C%E7%82%BA%E6%8C%87%E7%A4%BA%E5%99%A8-Don%E2%80%99t-rely-on-colour-alone-as-an-indicator"><span class="toc-number">10.</span> <span class="toc-text">不要僅依賴顏色作為指示器 Don’t rely on colour alone as an indicator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%96%AE%E4%B8%80%E7%9A%84%E7%84%A1%E8%A5%AF%E7%B7%9A%E5%AD%97%E9%AB%94-Use-a-single-sans-serif-typeface"><span class="toc-number">11.</span> <span class="toc-text">使用單一的無襯線字體 Use a single sans serif typeface</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%85%B7%E6%9C%89%E8%BC%83%E9%AB%98%E5%B0%8F%E5%AF%AB%E5%AD%97%E6%AF%8D%E7%9A%84%E5%AD%97%E9%AB%94-Use-a-typeface-with-taller-lower-case-letters"><span class="toc-number">12.</span> <span class="toc-text">使用具有較高小寫字母的字體 Use a typeface with taller lower case letters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E5%A4%A7%E5%AF%AB%E5%AD%97%E6%AF%8D%E7%9A%84%E4%BD%BF%E7%94%A8-Limit-the-use-of-uppercase"><span class="toc-number">13.</span> <span class="toc-text">限制大寫字母的使用 Limit the use of uppercase</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A6%8F%E5%92%8C%E7%B2%97%E9%AB%94%E5%AD%97%E9%87%8D-Use-regular-and-bold-font-weights-only"><span class="toc-number">14.</span> <span class="toc-text">只使用常規和粗體字重 Use regular and bold font weights only</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E7%B4%94%E9%BB%91%E8%89%B2%E6%96%87%E6%9C%AC-Avoid-pure-black-text"><span class="toc-number">15.</span> <span class="toc-text">避免使用純黑色文本 Avoid pure black text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A6%E5%B0%8D%E9%BD%8A%E6%96%87%E6%9C%AC-Left-align-text"><span class="toc-number">16.</span> <span class="toc-text">左對齊文本 Left align text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%96%87%E6%96%87%E6%9C%AC%E7%9A%84%E8%A1%8C%E9%AB%98%E6%87%89%E8%87%B3%E5%B0%91%E7%82%BA1-5%E5%80%8D-Use-at-least-1-5-line-height-for-body-text"><span class="toc-number">17.</span> <span class="toc-text">正文文本的行高應至少為1.5倍 Use at least 1.5 line height for body text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">18.</span> <span class="toc-text">修復上面的原始圖 We fixed it!</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/" title="16個小的UI設計規則卻能產生巨大的影響">16個小的UI設計規則卻能產生巨大的影響</a><time datetime="2023-07-25T09:38:20.000Z" title="發表於 2023-07-25 17:38:20">2023-07-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/17/create-sample-todolist-use-angular/" title="使用Angular建立一個簡單的任務管理器">使用Angular建立一個簡單的任務管理器</a><time datetime="2023-07-17T07:25:40.000Z" title="發表於 2023-07-17 15:25:40">2023-07-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/14/long-names-are-long/" title="如何為變數命名">如何為變數命名</a><time datetime="2023-07-14T07:36:59.000Z" title="發表於 2023-07-14 15:36:59">2023-07-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/14/the-top-10-tips-to-write-clean-code/" title="編寫乾淨代碼的前 10 個技巧">編寫乾淨代碼的前 10 個技巧</a><time datetime="2023-07-14T07:00:17.000Z" title="發表於 2023-07-14 15:00:17">2023-07-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/11/how-to-use-hexo-and-pull-github/" title="如何使用 Hexo + GitHub Pages 架設個人網誌">如何使用 Hexo + GitHub Pages 架設個人網誌</a><time datetime="2023-07-11T09:57:25.000Z" title="發表於 2023-07-11 17:57:25">2023-07-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Souts JJW</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
