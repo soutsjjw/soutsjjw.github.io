@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>使用透明加密(TDE)進行備份與還原 | 記憶所及之處</title><meta name="author" content="Souts JJW"><meta name="copyright" content="Souts JJW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="透明資料加密(TDE)是什麼？透明資料加密(TDE) 是一種在資料庫層級上對資料進行加密的技術。它在 SQL Server 中提供了完整的資料加密解決方案，可以有效地保護敏感資料不被未經授權的存取。 TDE 的特點是「透明」，因為它對應用程式和使用者來說是不可見的。一旦 TDE 開啟，所有寫入到資料庫的資料和備份都會自動進行加密，而讀取資料時也會自動進行解密，所有的這些加密和解密操作都是在資料庫引">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用透明加密(TDE)進行備份與還原">
+<meta property="og:url" content="http://example.com/2023/07/28/backup-and-restore-using-TDE/index.html">
+<meta property="og:site_name" content="記憶所及之處">
+<meta property="og:description" content="透明資料加密(TDE)是什麼？透明資料加密(TDE) 是一種在資料庫層級上對資料進行加密的技術。它在 SQL Server 中提供了完整的資料加密解決方案，可以有效地保護敏感資料不被未經授權的存取。 TDE 的特點是「透明」，因為它對應用程式和使用者來說是不可見的。一旦 TDE 開啟，所有寫入到資料庫的資料和備份都會自動進行加密，而讀取資料時也會自動進行解密，所有的這些加密和解密操作都是在資料庫引">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2023-07-28T09:13:17.000Z">
+<meta property="article:modified_time" content="2023-07-28T10:41:11.725Z">
+<meta property="article:author" content="Souts JJW">
+<meta property="article:tag" content="SQL Server">
+<meta property="article:tag" content="TDE">
+<meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/07/28/backup-and-restore-using-TDE/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '使用透明加密(TDE)進行備份與還原',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-28 18:41:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="記憶所及之處"><span class="site-name">記憶所及之處</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">使用透明加密(TDE)進行備份與還原</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2023-07-28T09:13:17.000Z" title="發表於 2023-07-28 17:13:17">2023-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2023-07-28T10:41:11.725Z" title="更新於 2023-07-28 18:41:11">2023-07-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="使用透明加密(TDE)進行備份與還原"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="透明資料加密-TDE-是什麼？"><a href="#透明資料加密-TDE-是什麼？" class="headerlink" title="透明資料加密(TDE)是什麼？"></a>透明資料加密(TDE)是什麼？</h2><p>透明資料加密(TDE) 是一種在資料庫層級上對資料進行加密的技術。它在 SQL Server 中提供了完整的資料加密解決方案，可以有效地保護敏感資料不被未經授權的存取。</p>
+<p>TDE 的特點是「透明」，因為它對應用程式和使用者來說是不可見的。一旦 TDE 開啟，所有寫入到資料庫的資料和備份都會自動進行加密，而讀取資料時也會自動進行解密，所有的這些加密和解密操作都是在資料庫引擎內部完成的。</p>
+<p>TDE 使用伺服器層級的憑證來保護數據，憑證內包含用於加密和解密資料的金鑰。在啟用 TDE 之前，需要先建立主密碼來保護伺服器層級的憑證。然後，使用 T-SQL 指令將資料庫加密金鑰和伺服器憑證相關聯，從而建立一個安全的加密環境。</p>
+<p>TDE 提供了一個有效且相對容易實施的方式，來保護資料庫的內容不被未經授權的使用者或黑客所存取。它有助於符合法規標準，提高資料庫的安全性，同時不需要更改應用程式層面的程式碼，因此也是一種非常便捷的資料加密解決方案。</p>
+<h2 id="示範環境說明"><a href="#示範環境說明" class="headerlink" title="示範環境說明"></a>示範環境說明</h2><p>示範共會使用兩台 SQL Server（W主機與L主機），都為<code>Microsoft SQL Server 2019</code>，W主機在Window環境中，L主機為WSL中使用Docker建立。</p>
+<p>資料庫使用北風資料庫（Northwind），要取得相關資料庫，可以至<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-tw/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases">取得 ADO.NET 程式碼範例的範例資料庫</a>進行下載，我們已經下載了並在W主機中建立好資料庫了。</p>
+<p>操作過程全部會使用<code>T-SQL</code>指令來執行。</p>
+<h2 id="執行透明加密（TDE）"><a href="#執行透明加密（TDE）" class="headerlink" title="執行透明加密（TDE）"></a>執行透明加密（TDE）</h2><ol>
+<li><p>我們先備份加密前的資料庫，稍後在L主機還原時，可以比對與加密後資料庫備份差別在那裡，執行下列指令進行備份：</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BACKUP DATABASE [Northwind] <span class="keyword">TO</span>  DISK <span class="operator">=</span> N<span class="string">&#x27;D:\資料庫備份\Northwind.bak&#x27;</span> </span><br><span class="line"><span class="keyword">WITH</span> NOFORMAT, NOINIT,  </span><br><span class="line">NAME <span class="operator">=</span> N<span class="string">&#x27;Northwind-Full Database Backup&#x27;</span>, <span class="keyword">SKIP</span>, NOREWIND, NOUNLOAD, COMPRESSION,  STATS <span class="operator">=</span> <span class="number">10</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建立Master Key與憑證</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">USE [master]</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> MASTER KEY ENCRYPTION <span class="keyword">BY</span> PASSWORD <span class="operator">=</span> <span class="string">&#x27;P@ssw0rd&#x27;</span>;</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> CERTIFICATE [Northwind_Cert] <span class="keyword">WITH</span> SUBJECT <span class="operator">=</span> <span class="string">&#x27;Northwind Instance層級憑證&#x27;</span> </span><br><span class="line">GO </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>對資料庫進行加密</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">USE [Northwind] </span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">警告: 用來加密資料庫加密金鑰的憑證尚未備份。您應該立即備份此憑證和與此憑證關聯的私密金鑰。萬一憑證無法使用時，或者您必須還原資料庫或將它附加到另一部伺服器時，就必須有憑證和私密金鑰的備份，否則就無法開啟資料庫。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">CREATE</span> DATABASE ENCRYPTION KEY</span><br><span class="line"><span class="keyword">WITH</span> ALGORITHM <span class="operator">=</span> AES_256</span><br><span class="line">ENCRYPTION <span class="keyword">BY</span> SERVER CERTIFICATE [Northwind_Cert] ;</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE [Northwind] <span class="keyword">SET</span> ENCRYPTION <span class="keyword">ON</span>;</span><br><span class="line">GO </span><br></pre></td></tr></table></figure>
+
+<p> 如要解除加密，可以執行下列指令：</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">USE [Northwind]; </span><br><span class="line">GO   </span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE [Northwind] <span class="keyword">SET</span> ENCRYPTION OFF;</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> DATABASE ENCRYPTION KEY;  </span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line">USE [master]</span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> CERTIFICATE [Northwind_Cert];</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> MASTER KEY;  </span><br><span class="line">GO</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="還原至其他主機"><a href="#還原至其他主機" class="headerlink" title="還原至其他主機"></a>還原至其他主機</h2><p>在前面的步驟我們已經完成了對北風資料庫的加密，我們這裡要做的是將加密的資料庫備份是否可以成功還原至主機。</p>
+<ol>
+<li><p>備份資料庫</p>
+<p> 我們這裡執行資料庫備份指令其實是相同的，差別在於資料庫本身已經加密了，所以為了與前面的資料庫備份有差別，名稱我們做了些調整。</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">USE master</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line">BACKUP DATABASE [Northwind] <span class="keyword">TO</span>  DISK <span class="operator">=</span> N<span class="string">&#x27;D:\資料庫備份\Northwind-Encryption.bak&#x27;</span> </span><br><span class="line"><span class="keyword">WITH</span> NOFORMAT, NOINIT,  </span><br><span class="line">NAME <span class="operator">=</span> N<span class="string">&#x27;Northwind-Encryption Database Backup&#x27;</span>, <span class="keyword">SKIP</span>, NOREWIND, NOUNLOAD, COMPRESSION,  STATS <span class="operator">=</span> <span class="number">10</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>匯出憑證與私鑰</p>
+<p> 執行下列指令來匯出憑證：</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">USE master</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="comment">--匯出Master Key</span></span><br><span class="line"><span class="comment">--OPEN MASTER KEY DECRYPTION BY PASSWORD = &#x27;P@ssw0rd&#x27;;  </span></span><br><span class="line"><span class="comment">--BACKUP MASTER KEY TO FILE = &#x27;D:\資料庫備份\Northwind_Master_Key&#x27; ENCRYPTION BY PASSWORD = &#x27;P@ssw0rd&#x27;;  </span></span><br><span class="line"><span class="comment">--GO</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--沒有包含Private key</span></span><br><span class="line"><span class="comment">--BACKUP CERTIFICATE [Northwind_Cert] TO FILE = &#x27;D:\資料庫備份\Northwind_Cert&#x27;;  </span></span><br><span class="line"><span class="comment">--GO </span></span><br><span class="line"></span><br><span class="line">BACKUP CERTIFICATE [Northwind_Cert]</span><br><span class="line"><span class="keyword">TO</span> FILE <span class="operator">=</span> <span class="string">&#x27;D:\資料庫備份\Northwind_Cert.cer&#x27;</span></span><br><span class="line"><span class="keyword">WITH</span> PRIVATE KEY (FILE <span class="operator">=</span> <span class="string">&#x27;D:\資料庫備份\Northwind_Cert.pvk&#x27;</span>, ENCRYPTION <span class="keyword">BY</span> PASSWORD <span class="operator">=</span> <span class="string">&#x27;P@ssw0rd&#x27;</span>);</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>複製檔案至L主機</p>
+<p> 我們現在共有<code>Northwind.bak</code>、<code>Northwind-Encryption.bak</code>、<code>Northwind_Cert.cer</code>和<code>Northwind_Cert.pvk</code>這四個檔案，開啟<code>Ubuntu</code>，將當前目錄移至使用<code>Docker</code>建立容器時，所關聯的資料夾，在這裡我們的目錄是<code>/home/&lt;User Name&gt;/docker/mssql/backup</code>，執行下列指令進行複製：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cp</span> /mnt/d/資料庫備份/Northwind.bak Northwind.bak</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cp</span> /mnt/d/資料庫備份/Northwind-Encryption.bak Northwind-Encryption.bak</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cp</span> /mnt/d/資料庫備份/Northwind_Cert.cer Northwind_Cert.cer</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cp</span> /mnt/d/資料庫備份/Northwind_Cert.pvk Northwind_Cert.pvk</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>還原未加密資料庫備份</p>
+<p> 我們先在L主機中建立北風資料庫後，執行下列指令執行還原資料庫：</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">USE [master]</span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE [Northwind] <span class="keyword">SET</span>  SINGLE_USER <span class="keyword">WITH</span> <span class="keyword">ROLLBACK</span> IMMEDIATE</span><br><span class="line">GO </span><br><span class="line">RESTORE DATABASE [Northwind]</span><br><span class="line"><span class="keyword">FROM</span> DISK<span class="operator">=</span><span class="string">&#x27;/var/opt/mssql/backup/Northwind.bak&#x27;</span></span><br><span class="line"><span class="keyword">WITH</span></span><br><span class="line">MOVE <span class="string">&#x27;Northwind&#x27;</span> <span class="keyword">TO</span> <span class="string">&#x27;/var/opt/mssql/data/Northwind.mdf&#x27;</span>,</span><br><span class="line">MOVE <span class="string">&#x27;Northwind_log&#x27;</span> <span class="keyword">TO</span> <span class="string">&#x27;/var/opt/mssql/data/Northwind.ldf&#x27;</span></span><br><span class="line">,NoRecovery</span><br><span class="line">,Replace</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line">RESTORE DATABASE [Northwind] <span class="keyword">WITH</span> RECOVERY</span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE [Northwind] <span class="keyword">SET</span> MULTI_USER;</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p> 要注意的是行7、行9和行10。前面有提到我們是將檔案複製至<code>/home/&lt;User Name&gt;/docker/mssql/backup</code>中，但這裡的路徑卻不一樣，這三行中的路徑指的是容器中的路徑。</p>
+<p> 可以執行下列指令進到容器中，再將當前目錄移至<code>/var/opt/mssql/data/</code>，就可以看到我們剛剛複製的檔案。</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo docker <span class="built_in">exec</span> -it &lt;容器名稱&gt; <span class="string">&quot;bash&quot;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>還原加密資料庫備份(失敗)</p>
+<p> 在匯入憑證與私鑰前，我們可以先試試看直接還原資料庫會怎麼樣？執行下列指令：</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">USE [master]</span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE [Northwind] <span class="keyword">SET</span>  SINGLE_USER <span class="keyword">WITH</span> <span class="keyword">ROLLBACK</span> IMMEDIATE</span><br><span class="line">GO </span><br><span class="line">RESTORE DATABASE [Northwind]</span><br><span class="line"><span class="keyword">FROM</span> DISK<span class="operator">=</span><span class="string">&#x27;/var/opt/mssql/backup/Northwind-Encryption.bak&#x27;</span></span><br><span class="line"><span class="keyword">WITH</span> </span><br><span class="line">MOVE <span class="string">&#x27;Northwind&#x27;</span> <span class="keyword">TO</span> <span class="string">&#x27;/var/opt/mssql/data/Northwind.mdf&#x27;</span>,</span><br><span class="line">MOVE <span class="string">&#x27;Northwind_log&#x27;</span> <span class="keyword">TO</span> <span class="string">&#x27;/var/opt/mssql/data/Northwind.ldf&#x27;</span></span><br><span class="line">,NoRecovery</span><br><span class="line">,Replace</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line">RESTORE DATABASE [Northwind] <span class="keyword">WITH</span> RECOVERY</span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE [Northwind] <span class="keyword">SET</span> MULTI_USER;</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p> 執行指令後，可以看到視窗會有以下的錯誤訊息，至此我們可以確定直接還原加密資料庫備份是不行的。</p>
+<blockquote>
+<p>如不先建立Master Key與還原憑證，直接還原資料庫會得到下列錯誤訊息<br>訊息 33111，層級 16，狀態 3，行 33<br>Cannot find server certificate with thumbprint ‘0x2B3085B4C0B7F2002C6BC2E41A84E73D6B8DF98C’.<br>訊息 3013，層級 16，狀態 1，行 33<br>RESTORE DATABASE is terminating abnormally.<br>訊息 3153，層級 16，狀態 2，行 42<br>The database is already fully recovered.<br>訊息 3013，層級 16，狀態 1，行 42<br>RESTORE DATABASE is terminating abnormally.</p>
+</blockquote>
+</li>
+<li><p>匯入憑證與私鑰</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">USE [master]</span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="comment">--如果不先建立Mater Key，而先還原憑證會出現下列錯誤訊息</span></span><br><span class="line"><span class="comment">--訊息 15581，層級 16，狀態 1，行 12</span></span><br><span class="line"><span class="comment">--Please create a master key in the database or open the master key in the session before performing this operation.</span></span><br><span class="line"><span class="keyword">CREATE</span> MASTER KEY ENCRYPTION <span class="keyword">BY</span> PASSWORD <span class="operator">=</span> <span class="string">&#x27;DifferentP@ssw0rd&#x27;</span>; </span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="comment">--CREATE CERTIFICATE [Northwind_Cert]</span></span><br><span class="line"><span class="comment">--FROM FILE = &#x27;/var/opt/mssql/backup/Northwind_Cert&#x27;;</span></span><br><span class="line"><span class="comment">--GO</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 還原憑證</span></span><br><span class="line"><span class="keyword">CREATE</span> CERTIFICATE [Northwind_Cert]</span><br><span class="line"><span class="keyword">FROM</span> FILE <span class="operator">=</span> <span class="string">&#x27;/var/opt/mssql/backup/Northwind_Cert.cer&#x27;</span></span><br><span class="line"><span class="keyword">WITH</span> PRIVATE KEY (FILE <span class="operator">=</span> <span class="string">&#x27;/var/opt/mssql/backup/Northwind_Cert.pvk&#x27;</span>, DECRYPTION <span class="keyword">BY</span> PASSWORD <span class="operator">=</span> <span class="string">&#x27;imMKpassword1&#x27;</span>);</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>還原加密資料庫備份(成功)</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">USE [Northwind] </span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> DATABASE ENCRYPTION KEY</span><br><span class="line"><span class="keyword">WITH</span> ALGORITHM <span class="operator">=</span> AES_256</span><br><span class="line">ENCRYPTION <span class="keyword">BY</span> SERVER CERTIFICATE [Northwind_Cert];</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line">USE [master]</span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE [Northwind] <span class="keyword">SET</span>  SINGLE_USER <span class="keyword">WITH</span> <span class="keyword">ROLLBACK</span> IMMEDIATE</span><br><span class="line">GO </span><br><span class="line">RESTORE DATABASE [Northwind]</span><br><span class="line"><span class="keyword">FROM</span> DISK<span class="operator">=</span><span class="string">&#x27;/var/opt/mssql/backup/Northwind-Encryption.bak&#x27;</span></span><br><span class="line"><span class="keyword">WITH</span> </span><br><span class="line">MOVE <span class="string">&#x27;Northwind&#x27;</span> <span class="keyword">TO</span> <span class="string">&#x27;/var/opt/mssql/data/Northwind.mdf&#x27;</span>,</span><br><span class="line">MOVE <span class="string">&#x27;Northwind_log&#x27;</span> <span class="keyword">TO</span> <span class="string">&#x27;/var/opt/mssql/data/Northwind.ldf&#x27;</span></span><br><span class="line">,NoRecovery</span><br><span class="line">,Replace</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line">RESTORE DATABASE [Northwind] <span class="keyword">WITH</span> RECOVERY</span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE [Northwind] <span class="keyword">SET</span> MULTI_USER;</span><br><span class="line">GO</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="透明加密-TDE-的好處與優點"><a href="#透明加密-TDE-的好處與優點" class="headerlink" title="透明加密(TDE)的好處與優點"></a>透明加密(TDE)的好處與優點</h2><p>透明資料加密 (TDE) 是一種在資料庫層級上對資料進行加密的技術，它提供了以下好處：</p>
+<p>完整性保護：透明加密可以防止未經授權的存取和修改資料，確保資料在存儲和傳輸過程中的完整性。</p>
+<p>安全性增強：TDE 提供了一個可靠的方式來保護敏感資料，即使資料庫檔案在存儲裝置或網路上遭受外部入侵，也能保持安全。</p>
+<p>簡單易用：透明加密在實施上比較簡單，它不需要應用程式層面的更改，而是在資料庫層級上完成加密和解密過程。</p>
+<p>符合法規標準：對於要求資料保密性的法規標準，例如GDPR，HIPAA和PCI DSS等，使用 TDE 可以幫助組織符合相關的安全法規。</p>
+<p>預防內部威脅：TDE 也有助於防範內部威脅，阻止未經授權的資料訪問。</p>
+<p>容易備份：即使在備份檔中，資料仍然保持加密狀態，因此即使備份文件丟失或被竊取，資料也能保持安全。</p>
+<p>總結來說，透明加密(TDE)是一種可靠且容易實施的資料加密技術，它可以在保護敏感資料的同時，保持系統的運作效率和簡便性。使用 TDE 可以提高資料庫的安全性，減少資料遭受未經授權存取的風險，並有助於符合相關的法規標準。</p>
+<h2 id="透明加密-TDE-的壞處與缺點"><a href="#透明加密-TDE-的壞處與缺點" class="headerlink" title="透明加密(TDE)的壞處與缺點"></a>透明加密(TDE)的壞處與缺點</h2><p>雖然透明資料加密 (TDE) 是一種有效的資料保護技術，但它也有一些壞處和缺點：</p>
+<p>效能影響：TDE 在加密和解密資料時會對資料庫的效能產生影響。這是因為在寫入和讀取資料時都需要進行加解密操作，可能會增加系統的負擔，尤其是在大型資料庫或高流量情況下。</p>
+<p>需要高安全性的憑證管理：TDE 使用伺服器層級的憑證來加密資料，因此需要確保這些憑證的私密金鑰資訊妥善保存。不當管理憑證可能會導致資料的安全風險。</p>
+<p>無法選擇部分加密：TDE 將資料庫的所有內容都加密，無法選擇只加密部分敏感資料。這意味著即使有些資料不是敏感資料，也會受到相同的加密保護，可能造成額外的效能負擔。</p>
+<p>高級特性的限制：TDE 可能會限制某些高級資料庫特性的使用，例如資料庫快照和透明資料加密之間的結合。</p>
+<p>管理複雜性：在多個 SQL Server 上實施 TDE 可能需要更多的管理和配置工作，特別是在複雜的資料庫架構中。</p>
+<p>需要適當權限管理：TDE 需要適當的權限來管理憑證和加密金鑰。如果權限不當配置，可能會導致潛在的安全風險。</p>
+<p>總結來說，儘管透明資料加密 (TDE) 是一種有效的資料保護技術，但它也有一些缺點和挑戰，特別是涉及到效能和管理的方面。在實施 TDE 時，需要仔細評估其對系統運作效率和管理的影響，以確保能夠平衡資料安全性和系統效能。</p>
+<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-tw/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-ver16">透明資料加密 (TDE)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.sqlservercentral.com/steps/stairway-level-2-restore-a-backup-of-a-tde-database-to-another-server">Restore a Backup of a TDE Database to Another Server: Level 2 of the Stairway to TDE</a></li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10186662">[Day05] 資料儲存安全(SQL透明資料加密)</a></li>
+</ol>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SQL-Server/">SQL Server</a><a class="post-meta__tags" href="/tags/TDE/">TDE</a><a class="post-meta__tags" href="/tags/Docker/">Docker</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/07/27/asp-net-core-6-and-angular-full-stack-web-development-with-asp-net-6-and-angular-13-1/" title="ASP.NET Core 6 and Angular筆記 - 1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">ASP.NET Core 6 and Angular筆記 - 1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Souts JJW</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86-TDE-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">透明資料加密(TDE)是什麼？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E7%AF%84%E7%92%B0%E5%A2%83%E8%AA%AA%E6%98%8E"><span class="toc-number">2.</span> <span class="toc-text">示範環境說明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%B7%E8%A1%8C%E9%80%8F%E6%98%8E%E5%8A%A0%E5%AF%86%EF%BC%88TDE%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">執行透明加密（TDE）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%82%84%E5%8E%9F%E8%87%B3%E5%85%B6%E4%BB%96%E4%B8%BB%E6%A9%9F"><span class="toc-number">4.</span> <span class="toc-text">還原至其他主機</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E5%8A%A0%E5%AF%86-TDE-%E7%9A%84%E5%A5%BD%E8%99%95%E8%88%87%E5%84%AA%E9%BB%9E"><span class="toc-number">5.</span> <span class="toc-text">透明加密(TDE)的好處與優點</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E5%8A%A0%E5%AF%86-TDE-%E7%9A%84%E5%A3%9E%E8%99%95%E8%88%87%E7%BC%BA%E9%BB%9E"><span class="toc-number">6.</span> <span class="toc-text">透明加密(TDE)的壞處與缺點</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%83%E8%80%83"><span class="toc-number">7.</span> <span class="toc-text">參考</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/28/backup-and-restore-using-TDE/" title="使用透明加密(TDE)進行備份與還原">使用透明加密(TDE)進行備份與還原</a><time datetime="2023-07-28T09:13:17.000Z" title="發表於 2023-07-28 17:13:17">2023-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/27/asp-net-core-6-and-angular-full-stack-web-development-with-asp-net-6-and-angular-13-1/" title="ASP.NET Core 6 and Angular筆記 - 1">ASP.NET Core 6 and Angular筆記 - 1</a><time datetime="2023-07-27T09:53:16.000Z" title="發表於 2023-07-27 17:53:16">2023-07-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/25/16-little-UI-design-rules-that-make-a-big-impact/" title="16個小的UI設計規則卻能產生巨大的影響">16個小的UI設計規則卻能產生巨大的影響</a><time datetime="2023-07-25T09:38:20.000Z" title="發表於 2023-07-25 17:38:20">2023-07-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/17/create-sample-todolist-use-angular/" title="使用Angular建立一個簡單的任務管理器">使用Angular建立一個簡單的任務管理器</a><time datetime="2023-07-17T07:25:40.000Z" title="發表於 2023-07-17 15:25:40">2023-07-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/14/long-names-are-long/" title="如何為變數命名">如何為變數命名</a><time datetime="2023-07-14T07:36:59.000Z" title="發表於 2023-07-14 15:36:59">2023-07-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Souts JJW</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
