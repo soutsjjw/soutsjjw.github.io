@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="http://example.com/img/avatar.png">
 <meta property="article:published_time" content="2023-07-28T09:13:17.000Z">
-<meta property="article:modified_time" content="2023-07-31T09:41:51.000Z">
+<meta property="article:modified_time" content="2023-08-01T06:25:37.000Z">
 <meta property="article:author" content="Souts JJW">
 <meta property="article:tag" content="SQL Server">
 <meta property="article:tag" content="TDE">
@@ -60,7 +60,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-07-31 17:41:51'
+  postUpdate: '2023-08-01 14:25:37'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -164,7 +164,7 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="記憶所及之處"><span class="site-name">記憶所及之處</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">使用透明加密(TDE)進行備份與還原</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2023-07-28T09:13:17.000Z" title="發表於 2023-07-28 17:13:17">2023-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2023-07-31T09:41:51.000Z" title="更新於 2023-07-31 17:41:51">2023-07-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="使用透明加密(TDE)進行備份與還原"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="透明資料加密-TDE-是什麼？"><a href="#透明資料加密-TDE-是什麼？" class="headerlink" title="透明資料加密(TDE)是什麼？"></a>透明資料加密(TDE)是什麼？</h2><p>透明資料加密(TDE) 是一種在資料庫層級上對資料進行加密的技術。它在 SQL Server 中提供了完整的資料加密解決方案，可以有效地保護敏感資料不被未經授權的存取。</p>
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="記憶所及之處"><span class="site-name">記憶所及之處</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">使用透明加密(TDE)進行備份與還原</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2023-07-28T09:13:17.000Z" title="發表於 2023-07-28 17:13:17">2023-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2023-08-01T06:25:37.000Z" title="更新於 2023-08-01 14:25:37">2023-08-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AD%86%E8%A8%98/">筆記</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="使用透明加密(TDE)進行備份與還原"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="透明資料加密-TDE-是什麼？"><a href="#透明資料加密-TDE-是什麼？" class="headerlink" title="透明資料加密(TDE)是什麼？"></a>透明資料加密(TDE)是什麼？</h2><p>透明資料加密(TDE) 是一種在資料庫層級上對資料進行加密的技術。它在 SQL Server 中提供了完整的資料加密解決方案，可以有效地保護敏感資料不被未經授權的存取。</p>
 <p>TDE 的特點是「透明」，因為它對應用程式和使用者來說是不可見的。一旦 TDE 開啟，所有寫入到資料庫的資料和備份都會自動進行加密，而讀取資料時也會自動進行解密，所有的這些加密和解密操作都是在資料庫引擎內部完成的。</p>
 <p>TDE 使用伺服器層級的憑證來保護數據，憑證內包含用於加密和解密資料的金鑰。在啟用 TDE 之前，需要先建立主密碼來保護伺服器層級的憑證。然後，使用 T-SQL 指令將資料庫加密金鑰和伺服器憑證相關聯，從而建立一個安全的加密環境。</p>
 <p>TDE 提供了一個有效且相對容易實施的方式，來保護資料庫的內容不被未經授權的使用者或黑客所存取。它有助於符合法規標準，提高資料庫的安全性，同時不需要更改應用程式層面的程式碼，因此也是一種非常便捷的資料加密解決方案。</p>
@@ -176,43 +176,111 @@
  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BACKUP DATABASE [Northwind] <span class="keyword">TO</span>  DISK <span class="operator">=</span> N<span class="string">&#x27;D:\資料庫備份\Northwind.bak&#x27;</span> </span><br><span class="line"><span class="keyword">WITH</span> NOFORMAT, NOINIT,  </span><br><span class="line">NAME <span class="operator">=</span> N<span class="string">&#x27;Northwind-Full Database Backup&#x27;</span>, <span class="keyword">SKIP</span>, NOREWIND, NOUNLOAD, COMPRESSION,  STATS <span class="operator">=</span> <span class="number">10</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>建立Master Key與憑證</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">USE [master]</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> MASTER KEY ENCRYPTION <span class="keyword">BY</span> PASSWORD <span class="operator">=</span> <span class="string">&#x27;P@ssw0rd&#x27;</span>;</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> CERTIFICATE [Northwind_Cert] <span class="keyword">WITH</span> SUBJECT <span class="operator">=</span> <span class="string">&#x27;Northwind Instance層級憑證&#x27;</span> </span><br><span class="line">GO </span><br></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">USE [master]</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> MASTER KEY ENCRYPTION <span class="keyword">BY</span> PASSWORD <span class="operator">=</span> <span class="string">&#x27;P@ssw0rd&#x27;</span>;</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> CERTIFICATE [Northwind_Cert] </span><br><span class="line"><span class="keyword">WITH</span> SUBJECT <span class="operator">=</span> <span class="string">&#x27;Northwind Instance層級憑證&#x27;</span></span><br><span class="line"><span class="comment">-- 如果未設置到期日，預設到期日為1年</span></span><br><span class="line"><span class="comment">-- , EXPIRY_DATE =&#x27;2025/08/01&#x27;</span></span><br><span class="line">GO </span><br></pre></td></tr></table></figure>
 </li>
 <li><p>對資料庫進行加密</p>
  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">USE [Northwind] </span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">警告: 用來加密資料庫加密金鑰的憑證尚未備份。您應該立即備份此憑證和與此憑證關聯的私密金鑰。萬一憑證無法使用時，或者您必須還原資料庫或將它附加到另一部伺服器時，就必須有憑證和私密金鑰的備份，否則就無法開啟資料庫。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">CREATE</span> DATABASE ENCRYPTION KEY</span><br><span class="line"><span class="keyword">WITH</span> ALGORITHM <span class="operator">=</span> AES_256</span><br><span class="line">ENCRYPTION <span class="keyword">BY</span> SERVER CERTIFICATE [Northwind_Cert] ;</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE [Northwind] <span class="keyword">SET</span> ENCRYPTION <span class="keyword">ON</span>;</span><br><span class="line">GO </span><br></pre></td></tr></table></figure>
 
 <p> 執行下列指令，確認資料庫是加密：</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, is_encrypted <span class="keyword">FROM</span> sys.databases;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> A.database_id <span class="keyword">AS</span> [資料庫識別碼], A.[name] <span class="keyword">AS</span> [資料庫名稱]</span><br><span class="line">, <span class="keyword">CASE</span> A.is_encrypted <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span> <span class="string">&#x27;已&#x27;</span> <span class="keyword">ELSE</span> <span class="string">&#x27;未&#x27;</span> <span class="keyword">END</span> <span class="operator">+</span> <span class="string">&#x27;加密&#x27;</span> <span class="keyword">AS</span> [資料庫是否加密]</span><br><span class="line">, B.key_algorithm <span class="keyword">AS</span> [金鑰演算法], B.key_length <span class="keyword">AS</span> [金鑰長度]</span><br><span class="line">, B.encryptor_type <span class="keyword">AS</span> [加密程式]</span><br><span class="line">, C.name <span class="keyword">AS</span> [證書名稱]</span><br><span class="line">, <span class="keyword">CASE</span> C.pvt_key_encryption_type</span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">&#x27;NA&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;憑證沒有私密金鑰&#x27;</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">&#x27;MK&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;私密金鑰是由主要金鑰加密&#x27;</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">&#x27;PW&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;私密金鑰是由使用者自訂密碼加密&#x27;</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">&#x27;SK&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;私密金鑰是由服務主要金鑰加密&#x27;</span></span><br><span class="line"><span class="keyword">END</span> <span class="keyword">AS</span> [私密金鑰加密]</span><br><span class="line">, C.[subject] <span class="keyword">AS</span> [憑證主旨]</span><br><span class="line">, <span class="keyword">CONVERT</span>(<span class="type">VARCHAR</span>, C.[expiry_date], <span class="number">111</span>) <span class="keyword">AS</span> [憑證到期日]</span><br><span class="line"><span class="keyword">FROM</span> sys.databases A</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> sys.dm_database_encryption_keys B <span class="keyword">ON</span> B.database_id <span class="operator">=</span> A.database_id</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> sys.certificates C <span class="keyword">ON</span> C.thumbprint <span class="operator">=</span> B.encryptor_thumbprint <span class="keyword">AND</span> B.encryptor_type <span class="operator">=</span> <span class="string">&#x27;CERTIFICATE&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <table>
 <thead>
 <tr>
-<th>name</th>
-<th>is_encrypted</th>
+<th><div style="width:100px">資料庫識別碼</div></th>
+<th><div style="width:80px">資料庫名稱</div></th>
+<th><div style="width:100px">資料庫是否加密</div></th>
+<th><div style="width:70px">金鑰演算法</div></th>
+<th><div style="width:60px">金鑰長度</div></th>
+<th><div style="width:120px">加密程式</div></th>
+<th>證書名稱</th>
+<th><div style="width:170px">私密金鑰加密</div></th>
+<th><div style="width:180px">憑證主旨</div></th>
+<th>憑證到期日</th>
 </tr>
 </thead>
 <tbody><tr>
+<td>1</td>
 <td>master</td>
-<td>0</td>
+<td>未加密</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
+<td>2</td>
 <td>tempdb</td>
-<td>1</td>
+<td>已加密</td>
+<td>AES</td>
+<td>256</td>
+<td>ASYMMETRIC KEY</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
+<td>3</td>
 <td>model</td>
-<td>0</td>
+<td>未加密</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
+<td>4</td>
 <td>msdb</td>
-<td>0</td>
+<td>未加密</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
+<td>5</td>
 <td>Northwind</td>
-<td>1</td>
+<td>已加密</td>
+<td>AES</td>
+<td>256</td>
+<td>CERTIFICATE</td>
+<td>Northwind_Cert</td>
+<td>私密金鑰是由主要金鑰加密</td>
+<td>Northwind Instance層級憑證</td>
+<td>2024&#x2F;08&#x2F;01</td>
 </tr>
 </tbody></table>
-<p> 可以看到<code>tempdb</code>和<code>Northwind</code>都已經加密。</p>
+<p> 可以看到<code>tempdb</code>和<code>Northwind</code>都已經加密。下列表格顯示 TDE 目錄檢視和動態管理檢視。</p>
+<table>
+<thead>
+<tr>
+<th>目錄檢視或動態管理檢視</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-tw/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=sql-server-ver16">sys.databases (Transact-SQL)</a></td>
+<td>顯示資料庫資訊的目錄檢視</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-tw/sql/relational-databases/system-catalog-views/sys-certificates-transact-sql?view=sql-server-ver16">sys.certificates (Transact-SQL)</a></td>
+<td>目錄檢視，其顯示資料庫中的憑證</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-tw/sql/relational-databases/system-dynamic-management-views/sys-dm-database-encryption-keys-transact-sql?view=sql-server-ver16">sys.dm_database_encryption_keys (Transact-SQL)</a></td>
+<td>動態管理檢視，其提供資料庫加密金鑰的資訊及加密狀態</td>
+</tr>
+</tbody></table>
 <p> 如要解除加密，可以執行下列指令：</p>
  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">USE [Northwind]; </span><br><span class="line">GO   </span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE [Northwind] <span class="keyword">SET</span> ENCRYPTION OFF;</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> DATABASE ENCRYPTION KEY;  </span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line">USE [master]</span><br><span class="line">GO </span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> CERTIFICATE [Northwind_Cert];</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> MASTER KEY;  </span><br><span class="line">GO</span><br></pre></td></tr></table></figure></li>
 </ol>
